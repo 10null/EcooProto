@@ -1,19 +1,25 @@
-import { Play } from "lucide-react";
+import { Images, Maximize2, Play } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import type { PortfolioProject } from "@/data/site-content";
 
 interface ProjectTileProps {
   project: PortfolioProject;
+  /** When provided, the tile opens the project gallery instead of being static. */
+  onOpen?: (project: PortfolioProject) => void;
 }
 
-/** Single executed-project tile. Video entries link out to the recording. */
-export const ProjectTile = ({ project }: ProjectTileProps) => {
+/** Single executed-project tile. */
+export const ProjectTile = ({ project, onOpen }: ProjectTileProps) => {
+  const cover = project.images[0] ?? null;
+  const isVideo = Boolean(project.videoUrl);
+  const canOpen = Boolean(onOpen) && project.images.length > 0;
+
   const content = (
     <>
-      {project.image ? (
+      {cover ? (
         <img
-          src={project.image}
+          src={cover}
           crossOrigin="anonymous"
           alt={project.title}
           loading="lazy"
@@ -25,11 +31,20 @@ export const ProjectTile = ({ project }: ProjectTileProps) => {
 
       <div className="absolute inset-0 bg-gradient-ink-fade" />
 
-      {project.videoUrl && (
-        <span className="absolute right-5 top-5 flex size-11 items-center justify-center rounded-full border border-ink-foreground/30 bg-ink-900/60 text-ink-foreground backdrop-blur-sm transition-colors duration-200 group-hover:border-accent group-hover:text-accent">
-          <Play className="size-4" />
+      <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-5">
+        <span className="rounded-full border border-ink-strong bg-ink-900/[0.6] px-3 py-1.5 text-[0.75rem] font-medium text-ink-foreground backdrop-blur-sm">
+          {project.images.length > 0
+            ? `${project.images.length} ${project.images.length === 1 ? "foto" : "fotos"}`
+            : "Video"}
         </span>
-      )}
+        <span className="flex size-9 items-center justify-center rounded-full border border-ink-foreground/25 bg-ink-900/[0.6] text-ink-foreground backdrop-blur-sm transition-colors duration-200 group-hover:border-accent group-hover:text-accent">
+          {isVideo ? (
+            <Play className="size-4" />
+          ) : (
+            <Maximize2 className="size-4" />
+          )}
+        </span>
+      </div>
 
       <div className="relative p-5 md:p-6">
         <span className="eyebrow text-accent">{project.category}</span>
@@ -41,14 +56,20 @@ export const ProjectTile = ({ project }: ProjectTileProps) => {
             ? `${project.year} · ${project.location}`
             : project.location}
         </p>
+        {canOpen && (
+          <span className="mt-3 inline-flex items-center gap-2 text-[0.875rem] font-semibold text-primary-bright opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+            <Images className="size-4" />
+            Ver galería
+          </span>
+        )}
       </div>
     </>
   );
 
   const baseClass =
-    "group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-lg border border-ink-border bg-ink-900";
+    "group relative flex min-h-[320px] w-full flex-col justify-end overflow-hidden rounded-lg border border-ink-border bg-ink-900 text-left";
 
-  if (project.videoUrl) {
+  if (isVideo) {
     return (
       <a
         href={project.videoUrl}
@@ -62,6 +83,22 @@ export const ProjectTile = ({ project }: ProjectTileProps) => {
       >
         {content}
       </a>
+    );
+  }
+
+  if (canOpen) {
+    return (
+      <button
+        type="button"
+        onClick={() => onOpen?.(project)}
+        aria-label={`Ver la galería del proyecto ${project.title}`}
+        className={cn(
+          baseClass,
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        )}
+      >
+        {content}
+      </button>
     );
   }
 

@@ -398,9 +398,15 @@ export interface PortfolioProject {
   year?: string;
   location: string;
   category: string;
-  image: string | null;
+  images: string[];
   videoUrl?: string;
 }
+
+const projectPhotos = (slug: string, count: number) =>
+  Array.from(
+    { length: count },
+    (_, index) => `/proyectos/${slug}/${String(index + 1).padStart(2, "0")}.jpg`
+  );
 
 export const portfolioProjects: PortfolioProject[] = [
   {
@@ -408,7 +414,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2023",
     location: "Yopal, Casanare",
     category: "Infraestructura vial",
-    image: "/proyectos/interesccion-yopal-sirivana.jpg",
+    images: projectPhotos("interesccion-yopal-sirivana", 2),
   },
   {
     title:
@@ -416,36 +422,35 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     location: "Muzo, Boyacá",
     category: "Geoestructuras de pavimento",
-    image: "/proyectos/esteriles-muzo-boyaca.jpg",
+    images: projectPhotos("esteriles-muzo-boyaca", 3),
   },
   {
     title: "Plataforma de izaje de equipos, estación 1 – Metro Línea 1",
     year: "2025",
     location: "Bogotá D.C.",
     category: "Metro Línea 1",
-    image: "/proyectos/metro-linea1-plataforma-izaje.jpg",
+    images: projectPhotos("metro-linea1-plataforma-izaje", 6),
   },
   {
-    title:
-      "Construcción vía La Cristalina, centro poblado de Puerto Gaitán",
+    title: "Construcción vía La Cristalina, centro poblado de Puerto Gaitán",
     year: "2025",
     location: "Puerto Gaitán, Meta",
     category: "Infraestructura vial",
-    image: "/proyectos/via-la-cristalina-puerto-gaitan.jpg",
+    images: projectPhotos("via-la-cristalina-puerto-gaitan", 2),
   },
   {
     title: "Tramo de vía Chaparral",
     year: "2020",
     location: "Tauramena, Casanare",
     category: "Infraestructura vial",
-    image: "/proyectos/tramo-chaparral-tauramena.jpg",
+    images: projectPhotos("tramo-chaparral-tauramena", 2),
   },
   {
     title: "Geoestructura en proceso manual, vía Peñas Blancas",
     year: "2022",
     location: "Borbur, Boyacá",
     category: "Geoestructuras de pavimento",
-    image: "/proyectos/geoestructura-borbur-boyaca.jpg",
+    images: projectPhotos("geoestructura-borbur-boyaca", 2),
   },
   {
     title:
@@ -453,13 +458,13 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2025",
     location: "Bogotá D.C.",
     category: "Metro Línea 1",
-    image: "/proyectos/metro-linea1-talud.jpg",
+    images: projectPhotos("metro-linea1-talud", 5),
   },
   {
     title: "Vía Las Tapas",
     location: "Yopal, Casanare",
     category: "Infraestructura vial",
-    image: null,
+    images: [],
     videoUrl: "https://ecopavle.com/gallery/EcoPav%20Video%20Las%20Tapas.mp4",
   },
 ];
