@@ -1,23 +1,29 @@
-import { useTranslation } from "react-i18next";
+import { SiteHeader } from "@/components/site/site-header";
+import { HeroSection } from "@/components/site/hero-section";
+import { CredentialsBand } from "@/components/site/credentials-band";
+import { AboutSection } from "@/components/site/about-section";
+import { InnovationsSection } from "@/components/site/innovations-section";
+import { ServicesSection } from "@/components/site/services-section";
+import { PortfolioSection } from "@/components/site/portfolio-section";
+import { PartnersSection } from "@/components/site/partners-section";
+import { ContactSection } from "@/components/site/contact-section";
+import { SiteFooter } from "@/components/site/site-footer";
 
-const Index = () => {
-  const { t } = useTranslation();
-
-  return (
-    <div className="relative flex h-full w-full flex-col bg-gradient-to-b from-[#4E54C8] to-[#A8C0FF] p-[32px] max-md:pb-[32px] max-md:pl-[20px] max-md:pr-[20px] max-md:pt-[32px]">
-      <div className="text-[26px] text-white max-md:text-[22px]">
-        {t("common.appName")}
-      </div>
-      <div className="flex h-full flex-1 flex-col items-center justify-center">
-        <div className="text-center text-[48px] text-white max-md:text-[26px]">
-          {t("home.hero.title")}
-        </div>
-        <div className="text-center text-[24px] text-white max-md:text-[16px]">
-          {t("home.hero.subtitle")}
-        </div>
-      </div>
-    </div>
-  );
-};
+const Index = () => (
+  <div className="flex min-h-full flex-col bg-background">
+    <SiteHeader />
+    <main>
+      <HeroSection />
+      <CredentialsBand />
+      <AboutSection />
+      <InnovationsSection />
+      <ServicesSection />
+      <PortfolioSection />
+      <PartnersSection />
+      <ContactSection />
+    </main>
+    <SiteFooter />
+  </div>
+);
 
 export default Index;
