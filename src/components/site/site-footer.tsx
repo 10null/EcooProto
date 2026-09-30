@@ -38,7 +38,7 @@ export const SiteFooter = () => (
     <div className="shell relative py-16 md:pb-8">
       <div className="grid gap-12 lg:grid-cols-12">
         <div className="flex flex-col gap-5 lg:col-span-4">
-          <EcopavleLogo tone="onInk" />
+          <EcopavleLogo tone="onInk" className="h-9 md:h-10" />
           <p className="eyebrow text-accent">
             No extraemos recursos, regeneramos territorios
           </p>
