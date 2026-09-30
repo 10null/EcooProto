@@ -1,34 +1,30 @@
 import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { EcopavleLogo } from "@/components/site/ecopavle-logo";
-import { contactInfo } from "@/data/site-content";
+import { contactInfo, innovationNav } from "@/data/site-content";
 
 const footerColumns = [
   {
     title: "Empresa",
     links: [
-      { label: "Inicio", href: "#inicio" },
-      { label: "Quiénes somos", href: "#quienes-somos" },
-      { label: "Portafolio", href: "#portafolio" },
-      { label: "Alianzas", href: "#alianzas" },
+      { label: "Inicio", to: "/" },
+      { label: "Quiénes somos", to: "/quienes-somos" },
+      { label: "Portafolio", to: "/portafolio" },
+      { label: "Alianzas", to: "/alianzas" },
     ],
   },
   {
     title: "Innovaciones",
-    links: [
-      { label: "ECOHYBRIDPAVLE®", href: "#innovaciones" },
-      { label: "Litificación para estructuras", href: "#innovaciones" },
-      { label: "Ladrillos sostenibles", href: "#innovaciones" },
-      { label: "BIOMORF", href: "#innovaciones" },
-    ],
+    links: innovationNav,
   },
   {
     title: "Servicios",
     links: [
-      { label: "Gerencia de proyectos", href: "#servicios" },
-      { label: "Prefactibilidad", href: "#servicios" },
-      { label: "Estudios y diseños", href: "#servicios" },
-      { label: "Interventoría de suelos", href: "#servicios" },
+      { label: "Gerencia de proyectos", to: "/servicios" },
+      { label: "Prefactibilidad", to: "/servicios" },
+      { label: "Estudios y diseños", to: "/servicios" },
+      { label: "Interventoría de suelos", to: "/servicios" },
     ],
   },
 ];
@@ -49,17 +45,21 @@ export const SiteFooter = () => (
         </div>
 
         {footerColumns.map((column) => (
-          <nav key={column.title} className="lg:col-span-2" aria-label={column.title}>
-            <h3 className="eyebrow text-accent">{column.title}</h3>
+          <nav
+            key={column.title}
+            className="lg:col-span-2"
+            aria-label={column.title}
+          >
+            <h2 className="eyebrow text-accent">{column.title}</h2>
             <ul className="mt-4 flex flex-col gap-3">
               {column.links.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
+                <li key={`${column.title}-${link.label}`}>
+                  <Link
+                    to={link.to}
                     className="text-[0.9375rem] text-ink-foreground/[0.72] underline-offset-4 transition-colors duration-150 hover:text-ink-foreground hover:underline hover:decoration-accent"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,7 +67,7 @@ export const SiteFooter = () => (
         ))}
 
         <div className="flex flex-col gap-4 lg:col-span-2">
-          <h3 className="eyebrow text-accent">Contacto</h3>
+          <h2 className="eyebrow text-accent">Contacto</h2>
           <ul className="flex flex-col gap-4 text-[0.9375rem] text-ink-foreground/[0.72]">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
@@ -106,13 +106,14 @@ export const SiteFooter = () => (
           <span className="text-[0.8125rem] text-ink-muted">
             Hecho en Colombia
           </span>
-          <a
-            href="#inicio"
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Volver arriba"
             className="flex size-11 items-center justify-center rounded-sm border border-ink-strong text-ink-foreground transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-ink-foreground/[0.08]"
           >
             <ArrowUp className="size-[18px]" />
-          </a>
+          </button>
         </div>
       </div>
     </div>

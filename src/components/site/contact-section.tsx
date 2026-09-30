@@ -32,23 +32,28 @@ const infoRows = [
   },
 ];
 
-export const ContactSection = () => (
-  <section
-    id="contacto"
-    className="section-ink texture-grid-ink relative overflow-hidden"
-  >
+interface ContactSectionProps {
+  showHeading?: boolean;
+}
+
+export const ContactSection = ({
+  showHeading = true,
+}: ContactSectionProps) => (
+  <section className="section-ink texture-grid-ink relative overflow-hidden">
     <div className="shell relative py-16 md:py-24 lg:py-32">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-7">
-          <Reveal>
-            <SectionHeading
-              tone="onInk"
-              eyebrow="Contáctanos"
-              title="Hablemos de tu proyecto"
-              description="Cuéntanos qué necesitas resolver en terreno. Nuestro equipo técnico evalúa la viabilidad, la ruta de trabajo y las tecnologías aplicables antes de definir cualquier propuesta."
-            />
-          </Reveal>
-          <Reveal delay={0.1} className="mt-10">
+          {showHeading && (
+            <Reveal>
+              <SectionHeading
+                tone="onInk"
+                eyebrow="Contáctanos"
+                title="Hablemos de tu proyecto"
+                description="Cuéntanos qué necesitas resolver en terreno. Nuestro equipo técnico evalúa la viabilidad, la ruta de trabajo y las tecnologías aplicables antes de definir cualquier propuesta."
+              />
+            </Reveal>
+          )}
+          <Reveal delay={0.1} className={showHeading ? "mt-10" : ""}>
             <ContactForm />
           </Reveal>
         </div>
@@ -67,7 +72,11 @@ export const ContactSection = () => (
                       <a
                         href={href}
                         target={href.startsWith("http") ? "_blank" : undefined}
-                        rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
+                        rel={
+                          href.startsWith("http")
+                            ? "noreferrer noopener"
+                            : undefined
+                        }
                         className="max-w-[34ch] text-[0.9375rem] leading-relaxed text-ink-foreground underline-offset-4 transition-colors hover:text-primary-bright hover:underline"
                       >
                         {value}

@@ -5,30 +5,38 @@ import { Reveal } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { contactInfo, portfolio } from "@/data/site-content";
 
-export const PortfolioSection = () => (
-  <section id="portafolio" className="relative overflow-hidden bg-background">
+interface PortfolioSectionProps {
+  showHeading?: boolean;
+}
+
+export const PortfolioSection = ({
+  showHeading = true,
+}: PortfolioSectionProps) => (
+  <section className="relative overflow-hidden bg-background">
     <div className="shell relative py-16 md:py-24 lg:py-32">
-      <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-        <Reveal className="flex-1">
-          <SectionHeading
-            eyebrow="Portafolio"
-            title="Proyectos, estudios e interventoría"
-            description="Experiencia continua en obras de infraestructura para el sector público y privado. Explora una muestra de nuestras intervenciones en video."
-          />
-        </Reveal>
-        <Reveal delay={0.1}>
-          <Button asChild size="lg" variant="outline">
-            <a
-              href={contactInfo.facebook}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Nuestros proyectos
-              <ExternalLink />
-            </a>
-          </Button>
-        </Reveal>
-      </div>
+      {showHeading && (
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <Reveal className="flex-1">
+            <SectionHeading
+              eyebrow="Portafolio"
+              title="Proyectos, estudios e interventoría"
+              description="Experiencia continua en obras de infraestructura para el sector público y privado. Explora una muestra de nuestras intervenciones en video."
+            />
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Button asChild size="lg" variant="outline">
+              <a
+                href={contactInfo.facebook}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Nuestros proyectos
+                <ExternalLink />
+              </a>
+            </Button>
+          </Reveal>
+        </div>
+      )}
 
       <div className="mt-12 grid gap-6 lg:mt-16 lg:grid-cols-3">
         {portfolio.map((item, index) => (
@@ -55,6 +63,26 @@ export const PortfolioSection = () => (
           </Reveal>
         ))}
       </div>
+
+      {!showHeading && (
+        <Reveal delay={0.1}>
+          <div className="mt-12 flex flex-col items-center gap-5 text-center">
+            <p className="max-w-[54ch] text-[0.9375rem] leading-relaxed text-muted-foreground">
+              Explora una muestra de nuestras intervenciones en video.
+            </p>
+            <Button asChild size="lg" variant="outline">
+              <a
+                href={contactInfo.facebook}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Nuestros proyectos
+                <ExternalLink />
+              </a>
+            </Button>
+          </div>
+        </Reveal>
+      )}
     </div>
   </section>
 );

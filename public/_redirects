@@ -1,0 +1,3 @@
+/*  SPA fallback: sirve index.html en rutas profundas
+    (Netlify y Cloudflare Pages leen este archivo automáticamente). */
+/*    /index.html   200

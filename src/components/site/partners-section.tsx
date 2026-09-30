@@ -9,16 +9,24 @@ const iconMap = {
   graduation: GraduationCap,
 } as const;
 
-export const PartnersSection = () => (
-  <section id="alianzas" className="relative overflow-hidden bg-background">
+interface PartnersSectionProps {
+  showHeading?: boolean;
+}
+
+export const PartnersSection = ({
+  showHeading = true,
+}: PartnersSectionProps) => (
+  <section className="relative overflow-hidden bg-background">
     <div className="shell relative py-16 md:py-24 lg:py-32">
-      <Reveal>
-        <SectionHeading
-          eyebrow="Alianzas"
-          title="Trabajamos con quienes investigan y construyen"
-          description="Articulamos capacidades técnicas, académicas y profesionales para llevar cada desarrollo al terreno con respaldo metodológico."
-        />
-      </Reveal>
+      {showHeading && (
+        <Reveal>
+          <SectionHeading
+            eyebrow="Alianzas"
+            title="Trabajamos con quienes investigan y construyen"
+            description="Articulamos capacidades técnicas, académicas y profesionales para llevar cada desarrollo al terreno con respaldo metodológico."
+          />
+        </Reveal>
+      )}
 
       <div className="mt-12 grid gap-5 md:grid-cols-2 lg:mt-16">
         {partners.map((partner, index) => {
@@ -37,6 +45,9 @@ export const PartnersSection = () => (
                 </h3>
                 <p className="max-w-[46ch] text-[0.9375rem] leading-relaxed text-muted-foreground">
                   {partner.description}
+                </p>
+                <p className="max-w-[46ch] text-[0.9375rem] leading-relaxed text-muted-foreground">
+                  {partner.detail}
                 </p>
                 {partner.href && (
                   <span className="mt-1 inline-flex items-center gap-2 text-[0.875rem] font-semibold text-primary">

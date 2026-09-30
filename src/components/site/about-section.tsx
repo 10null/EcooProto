@@ -1,20 +1,27 @@
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
+import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { capabilities, territoryImage } from "@/data/site-content";
 
-export const AboutSection = () => (
-  <section
-    id="quienes-somos"
-    className="relative overflow-hidden bg-background"
-  >
+interface AboutSectionProps {
+  showHeading?: boolean;
+  showMoreLink?: boolean;
+}
+
+export const AboutSection = ({
+  showHeading = true,
+  showMoreLink = true,
+}: AboutSectionProps) => (
+  <section className="relative overflow-hidden bg-background">
     <div className="shell relative py-16 md:py-24 lg:py-32">
       <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-6">
           <Reveal>
             <SectionHeading
-              eyebrow="Quiénes somos"
+              eyebrow={showHeading ? "Quiénes somos" : "Nuestra esencia"}
               title="ECOPAVLE S.A.S., ingeniería basada en la innovación"
               description="Diseñamos mecanismos y sistemas que permiten la estabilidad a través del uso y el reúso de los materiales provenientes de los pasivos ambientales generados por procesos industriales y de otros materiales disponibles en la región."
             />
@@ -46,6 +53,17 @@ export const AboutSection = () => (
               ))}
             </ul>
           </Reveal>
+
+          {showMoreLink && (
+            <Reveal delay={0.24}>
+              <Button asChild variant="outline" size="lg" className="group mt-8">
+                <Link to="/quienes-somos">
+                  Conoce más sobre nosotros
+                  <ArrowRight className="transition-transform duration-200 group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </Reveal>
+          )}
         </div>
 
         <Reveal delay={0.12} className="lg:col-span-6">

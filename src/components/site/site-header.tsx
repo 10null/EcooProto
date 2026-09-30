@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Clock, Mail, Menu, Phone, X } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { EcopavleLogo } from "@/components/site/ecopavle-logo";
-import { contactInfo, innovationSubLinks, siteNav } from "@/data/site-content";
+import { contactInfo, innovationNav, siteNav } from "@/data/site-content";
 import { cn } from "@/lib/utils";
 
 const EASE_ENGINEERED: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -39,6 +40,18 @@ export const SiteHeader = () => {
   }, []);
 
   const solid = scrolled || menuOpen;
+
+  const linkTone = (isActive: boolean) =>
+    cn(
+      navItemClass,
+      solid
+        ? isActive
+          ? "text-foreground after:scale-x-100"
+          : "text-foreground/[0.78] hover:text-foreground"
+        : isActive
+          ? "text-ink-foreground after:scale-x-100"
+          : "text-ink-foreground/[0.86] hover:text-ink-foreground"
+    );
 
   return (
     <>
@@ -84,13 +97,13 @@ export const SiteHeader = () => {
         </div>
 
         <div className="shell flex items-center justify-between gap-6">
-          <a
-            href="#inicio"
+          <Link
+            to="/"
             className="flex items-center py-4"
             aria-label="ECOPAVLE S.A.S. — Inicio"
           >
             <EcopavleLogo tone={solid ? "ink" : "onInk"} />
-          </a>
+          </Link>
 
           <nav
             aria-label="Navegación principal"
@@ -99,47 +112,42 @@ export const SiteHeader = () => {
             {siteNav.map((item) =>
               item.id === "innovaciones" ? (
                 <div key={item.id} className="group relative">
-                  <a
-                    href={item.href}
-                    className={cn(
-                      navItemClass,
-                      solid
-                        ? "text-foreground/[0.78] hover:text-foreground"
-                        : "text-ink-foreground/[0.86] hover:text-ink-foreground"
-                    )}
-                  >
+                  <NavLink to={item.to} className={({ isActive }) => linkTone(isActive)}>
                     {item.label}
-                  </a>
+                  </NavLink>
                   <div className="invisible absolute left-1/2 top-full z-10 w-[19rem] -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                     <div className="mt-2 overflow-hidden rounded-lg border border-border bg-card p-2 shadow-lg">
                       <p className="eyebrow px-3 pb-2 pt-3 text-accent-strong">
                         Investigación y desarrollo
                       </p>
-                      {innovationSubLinks.map((sub) => (
-                        <a
-                          key={sub.label}
-                          href={sub.href}
-                          className="block rounded-sm px-3 py-2.5 text-[0.9375rem] text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
+                      {innovationNav.map((sub) => (
+                        <NavLink
+                          key={sub.to}
+                          to={sub.to}
+                          className={({ isActive }) =>
+                            cn(
+                              "block rounded-sm px-3 py-2.5 text-[0.9375rem] transition-colors hover:bg-secondary hover:text-primary",
+                              isActive
+                                ? "text-primary"
+                                : "text-foreground/80"
+                            )
+                          }
                         >
                           {sub.label}
-                        </a>
+                        </NavLink>
                       ))}
                     </div>
                   </div>
                 </div>
               ) : (
-                <a
+                <NavLink
                   key={item.id}
-                  href={item.href}
-                  className={cn(
-                    navItemClass,
-                    solid
-                      ? "text-foreground/[0.78] hover:text-foreground"
-                      : "text-ink-foreground/[0.86] hover:text-ink-foreground"
-                  )}
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={({ isActive }) => linkTone(isActive)}
                 >
                   {item.label}
-                </a>
+                </NavLink>
               )
             )}
           </nav>
@@ -151,7 +159,7 @@ export const SiteHeader = () => {
               variant="hero"
               className="hidden sm:inline-flex"
             >
-              <a href="#contacto">Solicitar asesoría</a>
+              <Link to="/contacto">Solicitar asesoría</Link>
             </Button>
             <button
               type="button"
@@ -201,10 +209,8 @@ export const SiteHeader = () => {
 
               <nav className="relative mt-10 flex flex-col">
                 {siteNav.map((item, index) => (
-                  <motion.a
+                  <motion.div
                     key={item.id}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
                     initial={{ opacity: 0, x: 14 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
@@ -212,18 +218,29 @@ export const SiteHeader = () => {
                       delay: 0.04 + index * 0.03,
                       ease: EASE_ENGINEERED,
                     }}
-                    className="border-b border-ink-border py-4 font-display text-[1.375rem] font-semibold text-ink-foreground transition-colors hover:text-primary-bright"
                   >
-                    {item.label}
-                  </motion.a>
+                    <NavLink
+                      to={item.to}
+                      end={item.to === "/"}
+                      onClick={() => setMenuOpen(false)}
+                      className={({ isActive }) =>
+                        cn(
+                          "block border-b border-ink-border py-4 font-display text-[1.375rem] font-semibold transition-colors hover:text-primary-bright",
+                          isActive ? "text-primary-bright" : "text-ink-foreground"
+                        )
+                      }
+                    >
+                      {item.label}
+                    </NavLink>
+                  </motion.div>
                 ))}
               </nav>
 
               <div className="relative mt-8 flex flex-col gap-4">
                 <Button asChild size="lg" variant="hero">
-                  <a href="#contacto" onClick={() => setMenuOpen(false)}>
+                  <Link to="/contacto" onClick={() => setMenuOpen(false)}>
                     Solicitar asesoría
-                  </a>
+                  </Link>
                 </Button>
                 <div className="flex flex-col gap-2 text-sm text-ink-muted">
                   <a

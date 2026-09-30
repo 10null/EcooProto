@@ -1,4 +1,5 @@
 import { ArrowRight, Leaf, MapPin, ScrollText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
@@ -50,13 +51,15 @@ export const HeroSection = () => (
         <Reveal delay={0.24}>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Button asChild size="xl" variant="hero" className="group/cta">
-              <a href="#contacto">
+              <Link to="/contacto">
                 Solicitar asesoría
                 <ArrowRight className="transition-transform duration-200 group-hover/cta:translate-x-1" />
-              </a>
+              </Link>
             </Button>
             <Button asChild size="xl" variant="onInk">
-              <a href="#innovaciones">Conocer ECOHYBRIDPAVLE®</a>
+              <Link to="/innovaciones/ecohybridpavle">
+                Conocer ECOHYBRIDPAVLE®
+              </Link>
             </Button>
           </div>
         </Reveal>
