@@ -110,7 +110,7 @@ export const InnovationsSection = () => {
             <img
               src={biomorf.image}
               crossOrigin="anonymous"
-              alt="Muro de contención en concreto estabilizando un talud junto a la vía"
+              alt="Muro de contención con vegetación integrada estabilizando un talud junto a la vía"
               className="h-56 w-full object-cover transition-transform duration-700 ease-engineered group-hover:scale-[1.04] lg:h-full lg:min-h-[340px]"
             />
             <div className="flex flex-col justify-center gap-5 p-6 md:p-10">
