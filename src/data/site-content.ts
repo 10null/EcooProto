@@ -93,7 +93,7 @@ export const innovations = {
     description:
       "Diseñamos mecanismos y sistemas que permiten estabilidad en taludes, laderas y bordes de vía, integrando vegetación y materiales del territorio. Estabilidad estructural con regeneración del ecosistema intervenido.",
     image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-biomorf_74e0441f.png",
+      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-biomorf-muro_f8717c2b.png",
   },
 };
 
