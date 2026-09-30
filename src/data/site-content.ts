@@ -90,9 +90,9 @@ export const pageHeros = {
   },
   portafolio: {
     eyebrow: "Portafolio",
-    title: "Proyectos, estudios e interventoría",
+    title: "Nuestros proyectos",
     description:
-      "Experiencia continua en obras de infraestructura para el sector público y privado. Explora una muestra de nuestras intervenciones en video.",
+      "Obras ejecutadas para el sector público y privado: infraestructura vial, geoestructuras de pavimento y obras asociadas a la Metro Línea 1 de Bogotá.",
     breadcrumb: [{ label: "Portafolio" }],
   },
   alianzas: {
@@ -386,33 +386,81 @@ export const processSteps = [
 /* Portafolio y alianzas                                                     */
 /* ------------------------------------------------------------------------- */
 
-export const portfolio = [
+export const projectCategories = [
+  "Todos",
+  "Infraestructura vial",
+  "Geoestructuras de pavimento",
+  "Metro Línea 1",
+] as const;
+
+export interface PortfolioProject {
+  title: string;
+  year?: string;
+  location: string;
+  category: string;
+  image: string | null;
+  videoUrl?: string;
+}
+
+export const portfolioProjects: PortfolioProject[] = [
   {
-    eyebrow: "Infraestructura vial",
-    title: "Vías con litificación en sitio",
-    meta: "Pavimentos · ECOHYBRIDPAVLE®",
-    description:
-      "Corredores intervenidos con estabilización del material existente y capas de rodadura de alto desempeño.",
-    image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-port-1_21cb4a2f.png",
+    title: "Intersección vial, Yopal – vía Sirivana",
+    year: "2023",
+    location: "Yopal, Casanare",
+    category: "Infraestructura vial",
+    image: "/proyectos/interesccion-yopal-sirivana.jpg",
   },
   {
-    eyebrow: "Suelos y cimentaciones",
-    title: "Estudios y diseños geotécnicos",
-    meta: "Exploración y laboratorio",
-    description:
-      "Caracterización del terreno, exploración de campo y recomendaciones de diseño para cimentación y contención.",
-    image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-port-2_c7ea6c13.png",
+    title:
+      "Disposición final de estériles de minería en geoestructura de pavimento",
+    year: "2024",
+    location: "Muzo, Boyacá",
+    category: "Geoestructuras de pavimento",
+    image: "/proyectos/esteriles-muzo-boyaca.jpg",
   },
   {
-    eyebrow: "Supervisión técnica",
-    title: "Interventoría de obras de infraestructura",
-    meta: "Control de calidad y trazabilidad",
-    description:
-      "Acompañamiento permanente en obra para verificar especificaciones, materiales y cumplimiento de norma.",
-    image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-port-3_15a5ca0a.png",
+    title: "Plataforma de izaje de equipos, estación 1 – Metro Línea 1",
+    year: "2025",
+    location: "Bogotá D.C.",
+    category: "Metro Línea 1",
+    image: "/proyectos/metro-linea1-plataforma-izaje.jpg",
+  },
+  {
+    title:
+      "Construcción vía La Cristalina, centro poblado de Puerto Gaitán",
+    year: "2025",
+    location: "Puerto Gaitán, Meta",
+    category: "Infraestructura vial",
+    image: "/proyectos/via-la-cristalina-puerto-gaitan.jpg",
+  },
+  {
+    title: "Tramo de vía Chaparral",
+    year: "2020",
+    location: "Tauramena, Casanare",
+    category: "Infraestructura vial",
+    image: "/proyectos/tramo-chaparral-tauramena.jpg",
+  },
+  {
+    title: "Geoestructura en proceso manual, vía Peñas Blancas",
+    year: "2022",
+    location: "Borbur, Boyacá",
+    category: "Geoestructuras de pavimento",
+    image: "/proyectos/geoestructura-borbur-boyaca.jpg",
+  },
+  {
+    title:
+      "Conformación y recubrimiento de talud, plataforma de izaje de equipos 1 – Metro Línea 1",
+    year: "2025",
+    location: "Bogotá D.C.",
+    category: "Metro Línea 1",
+    image: "/proyectos/metro-linea1-talud.jpg",
+  },
+  {
+    title: "Vía Las Tapas",
+    location: "Yopal, Casanare",
+    category: "Infraestructura vial",
+    image: null,
+    videoUrl: "https://ecopavle.com/gallery/EcoPav%20Video%20Las%20Tapas.mp4",
   },
 ];
 

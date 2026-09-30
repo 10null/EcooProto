@@ -1,6 +1,6 @@
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
-import { PortfolioSection } from "@/components/site/portfolio-section";
+import { PortfolioProjects } from "@/components/site/portfolio-projects";
 import { pageHeros, pageMeta } from "@/data/site-content";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
@@ -10,7 +10,7 @@ const Portafolio = () => {
   return (
     <>
       <PageHero {...pageHeros.portafolio} />
-      <PortfolioSection showHeading={false} />
+      <PortfolioProjects />
       <CtaBand
         eyebrow="Tu proyecto"
         title="Sumemos una obra más a este portafolio"
