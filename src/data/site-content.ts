@@ -40,7 +40,7 @@ export const credentials = [
   {
     icon: "flask",
     label: "I+D propio",
-    text: "ECOHYBRIDPAVLE® y BIOMORF: desarrollos tecnológicos creados y validados en casa.",
+    text: "ECOHYBRIDPAVLE® y BIOMORF: desarrollos tecnológicos creados y validados en laboratorio.",
   },
   {
     icon: "recycle",
