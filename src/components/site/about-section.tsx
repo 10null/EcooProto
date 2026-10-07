@@ -32,7 +32,7 @@ export const AboutSection = ({
               Trabajamos para que las técnicas e innovaciones aplicadas se vean
               reflejadas de manera efectiva en el desarrollo y bienestar
               ambiental, social y económico, contando con el apoyo de la región y
-              de conformidad con las políticas de gobierno.
+              de conformidad con las políticas de gobierno;
             </p>
           </Reveal>
 
