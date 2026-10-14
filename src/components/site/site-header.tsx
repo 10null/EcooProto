@@ -102,7 +102,7 @@ export const SiteHeader = () => {
             className="flex items-center py-4"
             aria-label="ECOPAVLE S.A.S. — Inicio"
           >
-            <EcopavleLogo tone={solid ? "ink" : "onInk"} />
+            <EcopavleLogo />
           </Link>
 
           <nav
@@ -196,7 +196,7 @@ export const SiteHeader = () => {
               transition={{ duration: 0.24, ease: EASE_ENGINEERED }}
             >
               <div className="relative flex items-center justify-between">
-                <EcopavleLogo tone="onInk" className="h-14" />
+                <EcopavleLogo className="h-16" />
                 <button
                   type="button"
                   onClick={() => setMenuOpen(false)}
