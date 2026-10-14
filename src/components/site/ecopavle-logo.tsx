@@ -8,7 +8,7 @@ interface EcopavleLogoProps {
 }
 
 /** The official mark, cleaned of artefacts and served as optimised WebP. */
-const MARK_SRC = "/img/logo-ecopavle.webp";
+const MARK_SRC = "/img/logo-ecopavle-mark.webp";
 
 const markSize = {
   md: "h-12 md:h-14",
