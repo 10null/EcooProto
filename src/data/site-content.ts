@@ -10,8 +10,6 @@ export const siteNav = [
 
 export const innovationNav = [
   { label: "ECOHYBRIDPAVLE®", to: "/innovaciones/ecohybridpavle" },
-  { label: "Litificación para estructuras", to: "/innovaciones/litificacion" },
-  { label: "Ladrillos sostenibles", to: "/innovaciones/ladrillos-sostenibles" },
   { label: "BIOMORF", to: "/innovaciones/biomorf" },
 ];
 
@@ -123,9 +121,9 @@ export const pageMeta = {
       "Más de 20 años de ingeniería basada en la innovación: gerencia de proyectos, prefactibilidad, estudios y diseños e interventoría de suelos con tecnologías limpias.",
   },
   innovaciones: {
-    title: "Innovaciones | ECOHYBRIDPAVLE® y BIOMORF",
+    title: "Innovaciones | ECOHYBRIDPAVLE® + S-SEIM y BIOMORF",
     description:
-      "Líneas de I+D propias: ECOHYBRIDPAVLE® para litificación de suelos, ladrillos sostenibles para construcción y BIOMORF para estabilidad de taludes con vegetación integrada.",
+      "Dos líneas de I+D propias: el sistema ECOHYBRIDPAVLE® + S-SEIM para geoestructuras de pavimento ejecutadas in situ, y BIOMORF para estabilidad de taludes con vegetación integrada.",
   },
   servicios: {
     title: "Servicios de ingeniería | ECOP AVLE S.A.S.",
@@ -173,138 +171,6 @@ export const aboutBlocks = [
     icon: "shield",
     title: "Trayectoria",
     text: "Más de 20 años de servicio continuo en la gerencia de proyectos, prefactibilidad, estudios y diseños e interventoría de suelos del sector público y privado.",
-  },
-] as const;
-
-/* ------------------------------------------------------------------------- */
-/* Innovaciones                                                              */
-/* ------------------------------------------------------------------------- */
-
-export const innovations = {
-  hero: {
-    name: "ECOHYBRIDPAVLE®",
-    slug: "ecohybridpavle",
-    eyebrow: "Línea principal",
-    title: "Litificación de suelos en sitio",
-    description:
-      "Estabilizamos el material disponible en la región para conformar capas estructurales de alto desempeño, reduciendo la extracción de agregados y el transporte asociado. Un sistema híbrido que convierte el suelo existente en un pavimento durable.",
-    bullets: [
-      "Menor huella de carbono por kilómetro construido",
-      "Aprovechamiento del material local del corredor",
-      "Capas de rodadura con desempeño estructural verificable",
-    ],
-    image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-ecohybrid_9dad2044.png",
-  },
-  products: [
-    {
-      slug: "litificacion",
-      name: "Litificación para estructuras",
-      description:
-        "Conformación de estructuras de pavimento mediante procesos de litificación, con control técnico de laboratorio y obra.",
-      icon: "layers",
-      image: null,
-    },
-    {
-      slug: "ladrillos-sostenibles",
-      name: "Ladrillos sostenibles para construcción",
-      description:
-        "Elementos de construcción fabricados a partir del reúso de materiales de pasivos ambientales, con desempeño mecánico controlado.",
-      icon: "blocks",
-      image:
-        "https://cdn.enter.pro/resources/uid_100604786/ecopavle-ladrillos_33bbb3ea.png",
-    },
-  ],
-  biomorf: {
-    name: "BIOMORF",
-    slug: "biomorf",
-    eyebrow: "Bioingeniería",
-    description:
-      "Diseñamos mecanismos y sistemas que permiten estabilidad en taludes, laderas y bordes de vía, integrando vegetación y materiales del territorio. Estabilidad estructural con regeneración del ecosistema intervenido.",
-    image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-biomorf-muro-vegetado_b36f0bd1.png",
-  },
-};
-
-export const innovationDetails = [
-  {
-    slug: "ecohybridpavle",
-    name: "ECOHYBRIDPAVLE®",
-    eyebrow: "Línea principal",
-    title: "Litificación de suelos en sitio",
-    description:
-      "Estabilizamos el material disponible en la región para conformar capas estructurales de alto desempeño, reduciendo la extracción de agregados y el transporte asociado. Un sistema híbrido que convierte el suelo existente en un pavimento durable.",
-    image: innovations.hero.image,
-    bullets: [
-      "Menor huella de carbono por kilómetro construido",
-      "Aprovechamiento del material local del corredor",
-      "Capas de rodadura con desempeño estructural verificable",
-    ],
-    related: ["litificacion", "ladrillos-sostenibles"],
-    breadcrumb: [
-      { label: "Innovaciones", to: "/innovaciones" },
-      { label: "ECOHYBRIDPAVLE®" },
-    ],
-  },
-  {
-    slug: "litificacion",
-    name: "Litificación para estructuras",
-    eyebrow: "Subproducto de ECOHYBRIDPAVLE®",
-    title: "Estructuras de pavimento conformadas en sitio",
-    description:
-      "La litificación permite conformar estructuras de pavimento a partir del material existente, con control técnico de laboratorio y obra. El resultado son capas estructurales verificables, con menos material importado y menos residuos.",
-    image: innovations.hero.image,
-    bullets: [
-      "Conformación de estructuras de pavimento por litificación",
-      "Control técnico de laboratorio y de obra",
-      "Aprovechamiento del material disponible en el corredor",
-      "Menor movimiento de agregados importados",
-    ],
-    related: ["ecohybridpavle", "ladrillos-sostenibles"],
-    breadcrumb: [
-      { label: "Innovaciones", to: "/innovaciones" },
-      { label: "Litificación para estructuras" },
-    ],
-  },
-  {
-    slug: "ladrillos-sostenibles",
-    name: "Ladrillos sostenibles para construcción",
-    eyebrow: "Subproducto de ECOHYBRIDPAVLE®",
-    title: "Elementos de construcción a partir del reúso",
-    description:
-      "Fabricamos elementos de construcción a partir del reúso de materiales provenientes de pasivos ambientales, con desempeño mecánico controlado. Una alternativa que transforma residuos industriales en material útil para la obra.",
-    image: innovations.products[1].image,
-    bullets: [
-      "Reúso de materiales de pasivos ambientales",
-      "Desempeño mecánico controlado y verificable",
-      "Materiales disponibles en la región",
-      "Menos residuos enviados a disposición final",
-    ],
-    related: ["ecohybridpavle", "litificacion"],
-    breadcrumb: [
-      { label: "Innovaciones", to: "/innovaciones" },
-      { label: "Ladrillos sostenibles" },
-    ],
-  },
-  {
-    slug: "biomorf",
-    name: "BIOMORF",
-    eyebrow: "Bioingeniería",
-    title: "Estabilidad con vegetación integrada",
-    description:
-      "BIOMORF reúne nuestros mecanismos y sistemas para estabilidad de taludes, laderas y bordes de vía, integrando vegetación y materiales del territorio. La estructura resuelve la estabilidad y, al mismo tiempo, regenera el ecosistema intervenido.",
-    image: innovations.biomorf.image,
-    bullets: [
-      "Muros de contención con vegetación integrada",
-      "Estabilidad de taludes, laderas y bordes de vía",
-      "Control de erosión con materiales del territorio",
-      "Regeneración del ecosistema intervenido",
-    ],
-    related: ["ecohybridpavle", "litificacion"],
-    breadcrumb: [
-      { label: "Innovaciones", to: "/innovaciones" },
-      { label: "BIOMORF" },
-    ],
   },
 ] as const;
 

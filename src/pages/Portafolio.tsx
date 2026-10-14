@@ -1,6 +1,8 @@
 import { CtaBand } from "@/components/site/cta-band";
 import { PageHero } from "@/components/site/page-hero";
-import { PortfolioProjects } from "@/components/site/portfolio-projects";
+import { ProjectsGallery } from "@/components/site/projects-gallery";
+import { Reveal } from "@/components/site/reveal";
+import { SectionHeading } from "@/components/site/section-heading";
 import { pageHeros, pageMeta } from "@/data/site-content";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
@@ -10,7 +12,21 @@ const Portafolio = () => {
   return (
     <>
       <PageHero {...pageHeros.portafolio} />
-      <PortfolioProjects />
+
+      <section className="relative overflow-hidden bg-background">
+        <div className="shell relative py-16 md:py-20 lg:py-24">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Proyectos ejecutados"
+              title="Todas nuestras obras"
+              description="Toca cualquier obra para ver su galería completa de fotos. Filtra por línea de trabajo para recorrerlas."
+            />
+          </Reveal>
+
+          <ProjectsGallery showFilters />
+        </div>
+      </section>
+
       <CtaBand
         eyebrow="Tu proyecto"
         title="Sumemos una obra más a este portafolio"

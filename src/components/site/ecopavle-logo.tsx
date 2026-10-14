@@ -7,18 +7,18 @@ interface EcopavleLogoProps {
 }
 
 const LOGO_SRC = {
-  ink: "/eco-logo-dark.png",
-  onInk: "/eco-logo-light.png",
+  ink: "/logo-ecopavle-dark.png",
+  onInk: "/logo-ecopavle-light.png",
 } as const;
 
-/** Official ECOP AVLE S.A.S. wordmark, in its dark and light variants. */
+/** Official ECOP AV LE S.A.S. lockup, in its dark and light variants. */
 export const EcopavleLogo = ({ className, tone = "ink" }: EcopavleLogoProps) => (
   <img
     src={LOGO_SRC[tone]}
-    alt="ECOPAVLE S.A.S."
-    width={908}
-    height={159}
-    className={cn("h-8 w-auto select-none md:h-9", className)}
+    alt="ECOPAV LE S.A.S."
+    width={139}
+    height={86}
+    className={cn("h-11 w-auto select-none self-start md:h-12", className)}
   />
 );
 

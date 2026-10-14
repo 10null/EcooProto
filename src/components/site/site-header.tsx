@@ -196,7 +196,7 @@ export const SiteHeader = () => {
               transition={{ duration: 0.24, ease: EASE_ENGINEERED }}
             >
               <div className="relative flex items-center justify-between">
-                <EcopavleLogo tone="onInk" className="h-9" />
+                <EcopavleLogo tone="onInk" className="h-14" />
                 <button
                   type="button"
                   onClick={() => setMenuOpen(false)}

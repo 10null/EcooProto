@@ -4,32 +4,37 @@ import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/site/cta-band";
 import { InnovationRelated } from "@/components/site/innovation-related";
+import { InnovationSpec } from "@/components/site/innovation-spec";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal } from "@/components/site/reveal";
-import { innovationDetails, pageMeta } from "@/data/site-content";
+import { innovations } from "@/data/innovations";
+import { pageMeta } from "@/data/site-content";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import NotFound from "@/pages/NotFound";
 
 const InnovacionDetalle = () => {
   const { slug } = useParams<{ slug: string }>();
-  const detail = innovationDetails.find((item) => item.slug === slug);
+  const innovation = innovations.find((item) => item.slug === slug);
 
   usePageMeta(
-    detail
-      ? `${detail.name} | Innovaciones | ECOP AVLE S.A.S.`
+    innovation
+      ? `${innovation.name} | Innovaciones | ECOP AV LE S.A.S.`
       : pageMeta.innovaciones.title,
-    detail?.description ?? pageMeta.innovaciones.description
+    innovation?.summary ?? pageMeta.innovaciones.description
   );
 
-  if (!detail) return <NotFound />;
+  if (!innovation) return <NotFound />;
 
   return (
     <>
       <PageHero
-        eyebrow={detail.eyebrow}
-        title={detail.name}
-        description={detail.description}
-        breadcrumb={detail.breadcrumb}
+        eyebrow={innovation.eyebrow}
+        title={innovation.name}
+        description={innovation.summary}
+        breadcrumb={[
+          { label: "Innovaciones", to: "/innovaciones" },
+          { label: innovation.name },
+        ]}
       />
 
       <section className="relative overflow-hidden bg-background">
@@ -38,9 +43,9 @@ const InnovacionDetalle = () => {
             <Reveal className="lg:col-span-6">
               <figure className="overflow-hidden rounded-xl border border-border shadow-lg">
                 <img
-                  src={detail.image}
+                  src={innovation.image}
                   crossOrigin="anonymous"
-                  alt={detail.name}
+                  alt={innovation.imageAlt}
                   className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[520px]"
                 />
               </figure>
@@ -48,15 +53,15 @@ const InnovacionDetalle = () => {
 
             <div className="lg:col-span-6">
               <Reveal delay={0.08}>
-                <h2 className="display-s text-foreground">{detail.title}</h2>
+                <h2 className="display-s text-foreground">{innovation.title}</h2>
                 <p className="mt-6 max-w-[64ch] text-[1.0625rem] leading-relaxed text-muted-foreground">
-                  {detail.description}
+                  {innovation.description}
                 </p>
               </Reveal>
 
               <Reveal delay={0.14}>
                 <ul className="mt-10 flex flex-col gap-3">
-                  {detail.bullets.map((bullet) => (
+                  {innovation.bullets.map((bullet) => (
                     <li
                       key={bullet}
                       className="flex items-start gap-3 rounded-md border border-border bg-card px-4 py-3.5 shadow-xs"
@@ -89,12 +94,19 @@ const InnovacionDetalle = () => {
           </div>
 
           <div className="mt-16 lg:mt-20">
-            <InnovationRelated slugs={detail.related} />
+            <InnovationRelated currentSlug={innovation.slug} />
           </div>
         </div>
       </section>
 
-      <CtaBand />
+      {innovation.spec && <InnovationSpec spec={innovation.spec} />}
+
+      <CtaBand
+        eyebrow="Aplicación en obra"
+        title="Evaluemos tu caso con esta tecnología"
+        description="Revisamos el material disponible, las condiciones del corredor y te indicamos cómo aplica el sistema, con qué respaldo técnico y bajo qué controles de calidad."
+        primaryLabel="Agendar visita técnica"
+      />
     </>
   );
 };

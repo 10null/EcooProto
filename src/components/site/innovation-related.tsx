@@ -2,17 +2,16 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { Reveal } from "@/components/site/reveal";
-import { innovationDetails } from "@/data/site-content";
+import { innovations } from "@/data/innovations";
 
 interface InnovationRelatedProps {
-  slugs: readonly string[];
+  /** Slug of the innovation currently being viewed. */
+  currentSlug: string;
 }
 
-/** Other I+D lines, linked from an innovation detail page. */
-export const InnovationRelated = ({ slugs }: InnovationRelatedProps) => {
-  const related = innovationDetails.filter((item) =>
-    slugs.includes(item.slug)
-  );
+/** The other I+D lines, linked from an innovation detail page. */
+export const InnovationRelated = ({ currentSlug }: InnovationRelatedProps) => {
+  const related = innovations.filter((item) => item.slug !== currentSlug);
 
   if (related.length === 0) return null;
 
