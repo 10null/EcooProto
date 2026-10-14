@@ -9,8 +9,8 @@ interface EcopavleLogoProps {
   className?: string;
 }
 
-/** The official mark, traced from the brand file and upscaled for crisp rendering. */
-const MARK_SRC = "/logo-ecopavle-mark.png";
+/** The official mark, traced from the brand file and served as optimised WebP. */
+const MARK_SRC = "/img/logo-ecopavle.webp";
 
 const markSize = {
   md: "h-11 md:h-12",
@@ -69,8 +69,9 @@ export const EcopavleLogo = ({
       src={MARK_SRC}
       alt=""
       aria-hidden="true"
-      width={336}
-      height={360}
+      width={200}
+      height={214}
+      decoding="async"
       className={cn("w-auto shrink-0", markSize[size])}
     />
     <Wordmark tone={tone} size={size} />

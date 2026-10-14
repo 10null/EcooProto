@@ -11,7 +11,7 @@ interface ProjectTileProps {
 
 /** Single executed-project tile. */
 export const ProjectTile = ({ project, onOpen }: ProjectTileProps) => {
-  const cover = project.images[0] ?? null;
+  const cover = project.images[0]?.card ?? null;
   const isVideo = Boolean(project.videoUrl);
   const canOpen = Boolean(onOpen) && project.images.length > 0;
 
@@ -20,9 +20,11 @@ export const ProjectTile = ({ project, onOpen }: ProjectTileProps) => {
       {cover ? (
         <img
           src={cover}
-          crossOrigin="anonymous"
           alt={project.title}
           loading="lazy"
+          decoding="async"
+          width={640}
+          height={480}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-engineered group-hover:scale-[1.05]"
         />
       ) : (

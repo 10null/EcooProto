@@ -32,8 +32,9 @@ export const InnovationsSection = ({
               <span className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 bg-gradient-gold transition-transform duration-300 ease-engineered group-hover:scale-x-100" />
               <img
                 src={item.image}
-                crossOrigin="anonymous"
                 alt={item.imageAlt}
+                loading="lazy"
+                decoding="async"
                 className="h-52 w-full object-cover transition-transform duration-700 ease-engineered group-hover:scale-[1.04] sm:h-64"
               />
               <div className="flex flex-1 flex-col gap-5 p-6 md:p-8">

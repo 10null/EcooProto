@@ -44,7 +44,7 @@ export const ProjectsGallery = ({
   const slides = useMemo(
     () =>
       filtered.flatMap((project) =>
-        project.images.map((src) => ({ project, src }))
+        project.images.map((photo) => ({ project, photo }))
       ),
     [filtered]
   );
@@ -92,7 +92,9 @@ export const ProjectsGallery = ({
   );
 
   const photoIndex = current
-    ? projectSlides.findIndex((slide) => slide.src === current.src) + 1
+    ? projectSlides.findIndex(
+        (slide) => slide.photo.full === current.photo.full
+      ) + 1
     : 0;
 
   const countFor = (category: string) =>
@@ -200,9 +202,9 @@ export const ProjectsGallery = ({
 
                 <div className="relative flex-1 bg-black/50">
                   <motion.img
-                    key={current.src}
-                    src={current.src}
-                    crossOrigin="anonymous"
+                    key={current.photo.full}
+                    src={current.photo.full}
+                    decoding="async"
                     alt={`${current.project.title} — foto ${photoIndex}`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -246,7 +248,7 @@ export const ProjectsGallery = ({
                   >
                     {slides.map((slide, index) => (
                       <button
-                        key={slide.src}
+                        key={slide.photo.full}
                         type="button"
                         data-thumb={index}
                         onClick={() => setSlideIndex(index)}
@@ -260,10 +262,12 @@ export const ProjectsGallery = ({
                         )}
                       >
                         <img
-                          src={slide.src}
-                          crossOrigin="anonymous"
+                          src={slide.photo.thumb}
                           alt=""
                           loading="lazy"
+                          decoding="async"
+                          width={200}
+                          height={150}
                           className="h-full w-full object-cover"
                         />
                       </button>

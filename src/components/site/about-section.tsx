@@ -70,8 +70,9 @@ export const AboutSection = ({
           <figure className="relative overflow-hidden rounded-xl border border-border shadow-lg">
             <img
               src={territoryImage}
-              crossOrigin="anonymous"
               alt="Vía terciaria estabilizada atravesando paisaje rural verde"
+              loading="lazy"
+              decoding="async"
               className="h-[320px] w-full object-cover transition-transform duration-700 ease-engineered hover:scale-[1.03] sm:h-[420px] lg:h-[520px]"
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-ink-fade p-6 pt-20 sm:p-8 sm:pt-24">

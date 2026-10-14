@@ -54,11 +54,12 @@ export const capabilities = [
   "Interventoría de suelos",
 ];
 
-export const heroImage =
-  "https://cdn.enter.pro/resources/uid_100604786/ecopavle-hero_54ed9703.png";
+export const heroImage = "/img/hero-1920.webp";
 
-export const territoryImage =
-  "https://cdn.enter.pro/resources/uid_100604786/ecopavle-territorio_6aea4ee2.png";
+export const heroImageSrcSet =
+  "/img/hero-1280.webp 1280w, /img/hero-1920.webp 1920w";
+
+export const territoryImage = "/img/territorio.webp";
 
 /* ------------------------------------------------------------------------- */
 /* Encabezados de página                                                     */
@@ -259,20 +260,33 @@ export const projectCategories = [
   "Metro Línea 1",
 ] as const;
 
+export interface ProjectPhoto {
+  /** 200 px wide — gallery thumbnails. */
+  thumb: string;
+  /** 640 px wide — grid covers. */
+  card: string;
+  /** Up to 1200 px wide — gallery main image. */
+  full: string;
+}
+
 export interface PortfolioProject {
   title: string;
   year?: string;
   location: string;
   category: string;
-  images: string[];
+  images: ProjectPhoto[];
   videoUrl?: string;
 }
 
-const projectPhotos = (slug: string, count: number) =>
-  Array.from(
-    { length: count },
-    (_, index) => `/proyectos/${slug}/${String(index + 1).padStart(2, "0")}.jpg`
-  );
+const projectPhotos = (slug: string, count: number): ProjectPhoto[] =>
+  Array.from({ length: count }, (_, index) => {
+    const file = String(index + 1).padStart(2, "0");
+    return {
+      thumb: `/proyectos/${slug}/thumb-${file}.webp`,
+      card: `/proyectos/${slug}/card-${file}.webp`,
+      full: `/proyectos/${slug}/full-${file}.webp`,
+    };
+  });
 
 export const portfolioProjects: PortfolioProject[] = [
   {

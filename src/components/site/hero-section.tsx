@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/site/reveal";
-import { heroImage } from "@/data/site-content";
+import { heroImage, heroImageSrcSet } from "@/data/site-content";
 
 const trustSeals = [
   { icon: ScrollText, label: "Estudios, diseños e interventoría" },
@@ -15,7 +15,12 @@ export const HeroSection = () => (
   <section id="inicio" className="relative isolate overflow-hidden bg-ink-900">
     <img
       src={heroImage}
-      crossOrigin="anonymous"
+      srcSet={heroImageSrcSet}
+      sizes="100vw"
+      width={1920}
+      height={1080}
+      fetchPriority="high"
+      decoding="async"
       alt="Obra vial en la montaña colombiana con maquinaria de pavimentación y vegetación nativa"
       className="absolute inset-0 h-full w-full object-cover object-center motion-safe:animate-slow-pan"
     />

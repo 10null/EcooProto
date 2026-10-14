@@ -1,0 +1,63 @@
+{
+  "base": "/",
+  "routes": [
+    {
+      "url": "/",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public",
+      "initialDynamicImports": ["_browser-ponyfill-CPgYPSCq.js"],
+      "deferredDynamicImports": [],
+      "initialFonts": [],
+      "lcpImage": "/img/hero-1920.webp"
+    },
+    {
+      "url": "/quienes-somos",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    },
+    {
+      "url": "/innovaciones",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    },
+    {
+      "url": "/innovaciones/ecohybridpavle",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    },
+    {
+      "url": "/innovaciones/biomorf",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    },
+    {
+      "url": "/servicios",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    },
+    {
+      "url": "/portafolio",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    },
+    {
+      "url": "/alianzas",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    },
+    {
+      "url": "/contacto",
+      "html": "index.html",
+      "entry": "index.html",
+      "kind": "public"
+    }
+  ]
+}

@@ -45,7 +45,7 @@ export const innovations: Innovation[] = [
       "Menor explotación de canteras y menor traslado de materiales",
     ],
     image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-ecohybrid_9dad2044.png",
+      "/img/innovacion-ecohybrid.webp",
     imageAlt:
       "Superficie de geoestructura de pavimento con muestra de núcleo y equipo de medida",
     spec: {
@@ -249,7 +249,7 @@ export const innovations: Innovation[] = [
       "Regeneración del ecosistema intervenido",
     ],
     image:
-      "https://cdn.enter.pro/resources/uid_100604786/ecopavle-biomorf-muro-vegetado_b36f0bd1.png",
+      "/img/innovacion-biomorf.webp",
     imageAlt:
       "Muro de contención con vegetación integrada estabilizando un talud junto a la vía",
   },

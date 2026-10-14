@@ -1,0 +1,16 @@
+# Política de caché sugerida para el hosting.
+# Los assets con hash de Vite son inmutables; los medios de /img y /proyectos
+# no están versionados, por eso usan un TTL corto y revalidación.
+# La aplicación real de estos encabezados depende del hosting (Netlify/Cloudflare Pages).
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/img/*
+  Cache-Control: public, max-age=86400
+
+/proyectos/*
+  Cache-Control: public, max-age=86400
+
+/*
+  Cache-Control: public, max-age=0, must-revalidate

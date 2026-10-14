@@ -44,8 +44,9 @@ const InnovacionDetalle = () => {
               <figure className="overflow-hidden rounded-xl border border-border shadow-lg">
                 <img
                   src={innovation.image}
-                  crossOrigin="anonymous"
                   alt={innovation.imageAlt}
+                  loading="lazy"
+                  decoding="async"
                   className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[520px]"
                 />
               </figure>
