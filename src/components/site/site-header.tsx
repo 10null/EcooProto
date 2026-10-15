@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Clock, Mail, Menu, Phone, X } from "lucide-react";
+import { ChevronRight, Clock, Mail, Menu, Phone, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
@@ -116,13 +116,55 @@ export const SiteHeader = () => {
                     {item.label}
                   </NavLink>
                   <div className="invisible absolute left-1/2 top-full z-10 w-[19rem] -translate-x-1/2 translate-y-1 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                    <div className="mt-2 overflow-hidden rounded-lg border border-border bg-card p-2 shadow-lg">
+                    <div className="mt-2 rounded-lg border border-border bg-card p-2 shadow-lg">
                       <p className="eyebrow px-3 pb-2 pt-3 text-accent-strong">
                         Investigación y desarrollo
                       </p>
-                      {innovationNav.map((item) => (
-                        <div key={item.to} className="pb-1">
+                      {innovationNav.map((item) =>
+                        item.children ? (
+                          <div key={item.to} className="group/line relative">
+                            <NavLink
+                              to={item.to}
+                              className={({ isActive }) =>
+                                cn(
+                                  "flex items-center justify-between gap-3 rounded-sm px-3 py-2.5 text-[0.9375rem] font-medium transition-colors hover:bg-secondary hover:text-primary",
+                                  isActive
+                                    ? "text-primary"
+                                    : "text-foreground/80"
+                                )
+                              }
+                            >
+                              {item.label}
+                              <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform duration-150 group-hover/line:translate-x-0.5" />
+                            </NavLink>
+
+                            <div className="invisible absolute left-full top-0 z-20 ml-1 w-[16rem] translate-x-1 opacity-0 transition-all duration-150 ease-out group-focus-within/line:visible group-focus-within/line:translate-x-0 group-focus-within/line:opacity-100 group-hover/line:visible group-hover/line:translate-x-0 group-hover/line:opacity-100">
+                              <div className="overflow-hidden rounded-lg border border-border bg-card p-2 shadow-lg">
+                                <p className="eyebrow px-3 pb-2 pt-3 text-accent-strong">
+                                  {item.label}
+                                </p>
+                                {item.children.map((child) => (
+                                  <NavLink
+                                    key={child.to}
+                                    to={child.to}
+                                    className={({ isActive }) =>
+                                      cn(
+                                        "block rounded-sm px-3 py-2.5 text-[0.9375rem] transition-colors hover:bg-secondary hover:text-primary",
+                                        isActive
+                                          ? "text-primary"
+                                          : "text-foreground/80"
+                                      )
+                                    }
+                                  >
+                                    {child.label}
+                                  </NavLink>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
                           <NavLink
+                            key={item.to}
                             to={item.to}
                             className={({ isActive }) =>
                               cn(
@@ -133,29 +175,8 @@ export const SiteHeader = () => {
                           >
                             {item.label}
                           </NavLink>
-
-                          {item.children && (
-                            <div className="mb-1 ml-4 border-l border-border pl-1">
-                              {item.children.map((child) => (
-                                <NavLink
-                                  key={child.to}
-                                  to={child.to}
-                                  className={({ isActive }) =>
-                                    cn(
-                                      "block rounded-sm px-3 py-2 text-[0.875rem] transition-colors hover:bg-secondary hover:text-primary",
-                                      isActive
-                                        ? "text-primary"
-                                        : "text-muted-foreground"
-                                    )
-                                  }
-                                >
-                                  {child.label}
-                                </NavLink>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
