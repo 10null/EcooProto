@@ -297,9 +297,9 @@ export interface PortfolioProject {
   videoUrl?: string;
 }
 
-const projectPhotos = (slug: string, count: number): ProjectPhoto[] =>
-  Array.from({ length: count }, (_, index) => {
-    const file = String(index + 1).padStart(2, "0");
+const projectPhotos = (slug: string, numbers: number[]): ProjectPhoto[] =>
+  numbers.map((number) => {
+    const file = String(number).padStart(2, "0");
     return {
       thumb: `/proyectos/${slug}/thumb-${file}.webp`,
       card: `/proyectos/${slug}/card-${file}.webp`,
@@ -313,7 +313,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2023",
     location: "Yopal, Casanare",
     category: "Infraestructura vial",
-    images: projectPhotos("interesccion-yopal-sirivana", 2),
+    images: projectPhotos("interesccion-yopal-sirivana", [2]),
   },
   {
     title:
@@ -321,35 +321,35 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     location: "Muzo, Boyacá",
     category: "Geoestructuras de pavimento",
-    images: projectPhotos("esteriles-muzo-boyaca", 3),
+    images: projectPhotos("esteriles-muzo-boyaca", [3]),
   },
   {
     title: "Plataforma de izaje de equipos, estación 1 – Metro Línea 1",
     year: "2025",
     location: "Bogotá D.C.",
     category: "Metro Línea 1",
-    images: projectPhotos("metro-linea1-plataforma-izaje", 6),
+    images: projectPhotos("metro-linea1-plataforma-izaje", [1, 2, 3, 4, 5, 6]),
   },
   {
     title: "Construcción vía La Cristalina, centro poblado de Puerto Gaitán",
     year: "2025",
     location: "Puerto Gaitán, Meta",
     category: "Infraestructura vial",
-    images: projectPhotos("via-la-cristalina-puerto-gaitan", 2),
+    images: projectPhotos("via-la-cristalina-puerto-gaitan", [1]),
   },
   {
     title: "Tramo de vía Chaparral",
     year: "2020",
     location: "Tauramena, Casanare",
     category: "Infraestructura vial",
-    images: projectPhotos("tramo-chaparral-tauramena", 2),
+    images: projectPhotos("tramo-chaparral-tauramena", [2]),
   },
   {
     title: "Geoestructura en proceso manual, vía Peñas Blancas",
     year: "2022",
     location: "Borbur, Boyacá",
     category: "Geoestructuras de pavimento",
-    images: projectPhotos("geoestructura-borbur-boyaca", 2),
+    images: projectPhotos("geoestructura-borbur-boyaca", [2]),
   },
   {
     title:
@@ -357,7 +357,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2025",
     location: "Bogotá D.C.",
     category: "Metro Línea 1",
-    images: projectPhotos("metro-linea1-talud", 5),
+    images: projectPhotos("metro-linea1-talud", [1, 2, 5]),
   },
   {
     title: "Vía Las Tapas",
