@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 import { Reveal } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
+import { cn } from "@/lib/utils";
 import type { Innovation } from "@/data/innovations";
 
 interface InnovationSpecProps {
@@ -48,32 +49,51 @@ export const InnovationSpec = ({ spec }: InnovationSpecProps) => {
                 </summary>
 
                 <div className="pb-8 md:pr-16">
-                  {block.paragraphs?.map((paragraph) => (
-                    <p
-                      key={paragraph.slice(0, 40)}
-                      className="max-w-[80ch] text-[0.9375rem] leading-relaxed text-ink-muted"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-
-                  {block.items && (
-                    <ul className="flex flex-col gap-5">
-                      {block.items.map((item) => (
-                        <li
-                          key={item.label}
-                          className="flex flex-col gap-1.5 border-l-2 border-ink-border pl-4"
+                  <div
+                    className={cn(
+                      block.image &&
+                        "grid gap-6 md:grid-cols-[minmax(0,1fr)_260px] md:items-start md:gap-10"
+                    )}
+                  >
+                    <div>
+                      {block.paragraphs?.map((paragraph) => (
+                        <p
+                          key={paragraph.slice(0, 40)}
+                          className="max-w-[80ch] text-[0.9375rem] leading-relaxed text-ink-muted"
                         >
-                          <span className="text-[0.9375rem] font-semibold text-ink-foreground">
-                            {item.label}
-                          </span>
-                          <span className="max-w-[80ch] text-[0.9375rem] leading-relaxed text-ink-muted">
-                            {item.text}
-                          </span>
-                        </li>
+                          {paragraph}
+                        </p>
                       ))}
-                    </ul>
-                  )}
+
+                      {block.items && (
+                        <ul className="flex flex-col gap-5">
+                          {block.items.map((item) => (
+                            <li
+                              key={item.label}
+                              className="flex flex-col gap-1.5 border-l-2 border-ink-border pl-4"
+                            >
+                              <span className="text-[0.9375rem] font-semibold text-ink-foreground">
+                                {item.label}
+                              </span>
+                              <span className="max-w-[80ch] text-[0.9375rem] leading-relaxed text-ink-muted">
+                                {item.text}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+
+                    {block.image && (
+                      <img
+                        src={block.image}
+                        alt={block.imageAlt ?? ""}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full rounded-lg border border-ink-border bg-ink-800 object-cover"
+                      />
+                    )}
+                  </div>
                 </div>
               </details>
             </Reveal>

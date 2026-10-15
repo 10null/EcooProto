@@ -3,6 +3,8 @@ export interface InnovationSpecBlock {
   title: string;
   paragraphs?: string[];
   items?: { label: string; text: string }[];
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface Innovation {
@@ -248,9 +250,9 @@ export const innovations: Innovation[] = [
       "Producto final inerte, libre de hidrocarburos y humedad",
       "Disposición final controlada o aprovechamiento como insumo",
     ],
-    image: "/img/innovacion-biomorf-2.webp",
+    image: "/img/biomorf-crudo.webp",
     imageAlt:
-      "Material granular inerte obtenido del tratamiento de residuos con BIOMORF",
+      "Piscina de crudo de petróleo con residuos de hidrocarburos tratados con BIOMORF",
     spec: {
       label: "Cómo funciona",
       title: "Proceso físico–químico de dos etapas",
@@ -263,6 +265,9 @@ export const innovations: Innovation[] = [
           paragraphs: [
             "La primera fase consiste en aplicar un agente químico formulado para desactivar y fragmentar los enlaces físico–químicos de la fase oleosa. Este procedimiento neutraliza hidrocarburos, elimina compuestos fenólicos y suprime completamente la capacidad de migración o lixiviación.",
           ],
+          image: "/img/biomorf-fase-1.webp",
+          imageAlt:
+            "Residuo oleoso tratado con el agente químico de ruptura oleo–molecular",
         },
         {
           code: "FASE 2",
@@ -270,6 +275,9 @@ export const innovations: Innovation[] = [
           paragraphs: [
             "En la segunda fase se incorpora un compuesto sólido de acción química que libera el agua retenida en la matriz del residuo. Este paso genera una reconfiguración estructural de las partículas, dando como resultado un material granular seco, inerte y estable frente a condiciones ambientales externas.",
           ],
+          image: "/img/biomorf-fase-2.webp",
+          imageAlt:
+            "Secado reactivo de la matriz del residuo hasta material granular",
         },
         {
           code: "RESULTADO",
@@ -278,6 +286,9 @@ export const innovations: Innovation[] = [
             "El producto final de BIOMORF es un material granular inerte, libre de hidrocarburos y humedad, con estabilidad físico–química comprobada. Su potencial de contaminación es nulo y cumple con las condiciones para disposición final controlada o para su integración en esquemas de aprovechamiento dentro de la economía circular.",
             "El proceso tiene una duración máxima de semanas y asegura la eliminación de contaminantes libres y de la humedad retenida, obteniendo un producto estable, sólido y ambientalmente seguro.",
           ],
+          image: "/img/biomorf-resultado.webp",
+          imageAlt:
+            "Muestra del material granular inerte obtenido al final del proceso",
         },
       ],
     },
