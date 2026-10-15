@@ -129,7 +129,7 @@ export const SiteFooter = () => (
           reservados.
         </p>
         <p className="text-[0.8125rem] text-ink-muted">
-          Powered By ECOPAV®
+          Powered By ECOPAVLE®
         </p>
       </div>
     </div>
