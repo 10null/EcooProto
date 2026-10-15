@@ -267,7 +267,7 @@ export const ContactForm = () => {
             <Check className="size-3 text-primary-foreground opacity-0 transition-opacity duration-150 peer-checked:opacity-100" />
           </span>
           <span className="text-[0.8125rem] leading-relaxed text-ink-muted">
-            Autorizo a ECOP AVLE S.A.S. el tratamiento de mis datos personales
+            Autorizo a ECOPAVLE S.A.S. el tratamiento de mis datos personales
             conforme a la Ley 1581 de 2012 y su política de privacidad.
           </span>
         </label>

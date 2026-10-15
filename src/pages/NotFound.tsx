@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 const NotFound = () => {
-  usePageMeta("Página no encontrada | ECOP AVLE S.A.S.");
+  usePageMeta("Página no encontrada | ECOPAVLE S.A.S.");
 
   return (
     <section className="section-ink texture-grid-ink relative overflow-hidden">

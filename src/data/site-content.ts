@@ -136,7 +136,7 @@ export const pageMeta = {
       "Empresa colombiana de ingeniería basada en la innovación: estudios y diseños, interventoría de suelos y tecnologías limpias como ECOHYBRIDPAVLE® y BIOMORF. No extraemos recursos, regeneramos territorios.",
   },
   quienesSomos: {
-    title: "Quiénes somos | ECOP AVLE S.A.S.",
+    title: "Quiénes somos | ECOPAVLE S.A.S.",
     description:
       "Más de 20 años de ingeniería basada en la innovación: gerencia de proyectos, prefactibilidad, estudios y diseños e interventoría de suelos con tecnologías limpias.",
   },
@@ -146,22 +146,22 @@ export const pageMeta = {
       "Dos líneas de I+D propias: el sistema ECOHYBRIDPAVLE® + S-SEIM para geoestructuras de pavimento ejecutadas in situ, y BIOMORF para convertir residuos contaminados en material granular inerte.",
   },
   servicios: {
-    title: "Servicios de ingeniería | ECOP AVLE S.A.S.",
+    title: "Servicios de ingeniería | ECOPAVLE S.A.S.",
     description:
       "Gerencia de proyectos, prefactibilidad, estudios y diseños, e interventoría de suelos para el sector público y privado.",
   },
   portafolio: {
-    title: "Portafolio de proyectos | ECOP AVLE S.A.S.",
+    title: "Portafolio de proyectos | ECOPAVLE S.A.S.",
     description:
       "Vías con litificación en sitio, estudios y diseños geotécnicos e interventoría de obras de infraestructura.",
   },
   alianzas: {
-    title: "Alianzas | ECOP AVLE S.A.S.",
+    title: "Alianzas | ECOPAVLE S.A.S.",
     description:
       "Alianzas profesionales y académicas que respaldan metodológicamente cada desarrollo llevado al terreno.",
   },
   contacto: {
-    title: "Contacto | ECOP AVLE S.A.S.",
+    title: "Contacto | ECOPAVLE S.A.S.",
     description:
       "Solicita asesoría técnica: Cra 15 #66a - 18, Barrios Unidos, Bogotá D.C. Colombia. info@ecopavle.com",
   },

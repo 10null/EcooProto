@@ -125,7 +125,7 @@ export const SiteFooter = () => (
 
       <div className="mt-12 flex flex-col gap-6 border-t border-ink-border pt-6 md:flex-row md:items-center md:justify-between">
         <p className="text-[0.8125rem] text-ink-muted">
-          © {new Date().getFullYear()} ECOP AVLE S.A.S. Todos los derechos
+          © {new Date().getFullYear()} ECOPAVLE S.A.S. Todos los derechos
           reservados.
         </p>
         <div className="flex items-center gap-5">

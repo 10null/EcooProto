@@ -99,7 +99,7 @@ export const ContactSection = ({
                     href={contactInfo.instagram}
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="Instagram de ECOP AVLE"
+                    aria-label="Instagram de ECOPAVLE"
                     className="flex size-11 items-center justify-center rounded-sm border border-ink-strong text-ink-foreground transition-colors hover:border-primary-bright/60 hover:text-primary-bright"
                   >
                     <Instagram className="size-[18px]" />
@@ -108,7 +108,7 @@ export const ContactSection = ({
                     href={contactInfo.facebook}
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="Facebook de ECOP AVLE"
+                    aria-label="Facebook de ECOPAVLE"
                     className="flex size-11 items-center justify-center rounded-sm border border-ink-strong text-ink-foreground transition-colors hover:border-primary-bright/60 hover:text-primary-bright"
                   >
                     <Facebook className="size-[18px]" />
