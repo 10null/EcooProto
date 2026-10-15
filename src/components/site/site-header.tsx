@@ -120,21 +120,41 @@ export const SiteHeader = () => {
                       <p className="eyebrow px-3 pb-2 pt-3 text-accent-strong">
                         Investigación y desarrollo
                       </p>
-                      {innovationNav.map((sub) => (
-                        <NavLink
-                          key={sub.to}
-                          to={sub.to}
-                          className={({ isActive }) =>
-                            cn(
-                              "block rounded-sm px-3 py-2.5 text-[0.9375rem] transition-colors hover:bg-secondary hover:text-primary",
-                              isActive
-                                ? "text-primary"
-                                : "text-foreground/80"
-                            )
-                          }
-                        >
-                          {sub.label}
-                        </NavLink>
+                      {innovationNav.map((item) => (
+                        <div key={item.to} className="pb-1">
+                          <NavLink
+                            to={item.to}
+                            className={({ isActive }) =>
+                              cn(
+                                "block rounded-sm px-3 py-2.5 text-[0.9375rem] font-medium transition-colors hover:bg-secondary hover:text-primary",
+                                isActive ? "text-primary" : "text-foreground/80"
+                              )
+                            }
+                          >
+                            {item.label}
+                          </NavLink>
+
+                          {item.children && (
+                            <div className="mb-1 ml-4 border-l border-border pl-1">
+                              {item.children.map((child) => (
+                                <NavLink
+                                  key={child.to}
+                                  to={child.to}
+                                  className={({ isActive }) =>
+                                    cn(
+                                      "block rounded-sm px-3 py-2 text-[0.875rem] transition-colors hover:bg-secondary hover:text-primary",
+                                      isActive
+                                        ? "text-primary"
+                                        : "text-muted-foreground"
+                                    )
+                                  }
+                                >
+                                  {child.label}
+                                </NavLink>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -232,6 +252,24 @@ export const SiteHeader = () => {
                     >
                       {item.label}
                     </NavLink>
+                    {item.id === "innovaciones" && (
+                      <div className="flex flex-col border-b border-ink-border pb-3">
+                        {innovationNav.flatMap((line) =>
+                          line.children
+                            ? line.children.map((child) => (
+                                <NavLink
+                                  key={child.to}
+                                  to={child.to}
+                                  onClick={() => setMenuOpen(false)}
+                                  className="border-l border-ink-border py-2.5 pl-5 text-[0.9375rem] text-ink-muted transition-colors hover:text-primary-bright"
+                                >
+                                  {child.label}
+                                </NavLink>
+                              ))
+                            : []
+                        )}
+                      </div>
+                    )}
                   </motion.div>
                 ))}
               </nav>

@@ -15,10 +15,6 @@ const footerColumns = [
     ],
   },
   {
-    title: "Innovaciones",
-    links: innovationNav,
-  },
-  {
     title: "Servicios",
     links: [
       { label: "Gerencia de proyectos", to: "/servicios" },
@@ -65,6 +61,36 @@ export const SiteFooter = () => (
             </ul>
           </nav>
         ))}
+
+        <nav className="lg:col-span-2" aria-label="Innovaciones">
+          <h2 className="eyebrow text-accent">Innovaciones</h2>
+          <ul className="mt-4 flex flex-col gap-3">
+            {innovationNav.map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  className="text-[0.9375rem] text-ink-foreground/[0.72] underline-offset-4 transition-colors duration-150 hover:text-ink-foreground hover:underline hover:decoration-accent"
+                >
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <ul className="mt-3 flex flex-col gap-3 border-l border-ink-border pl-3">
+                    {item.children.map((child) => (
+                      <li key={child.to}>
+                        <Link
+                          to={child.to}
+                          className="text-[0.875rem] text-ink-muted underline-offset-4 transition-colors duration-150 hover:text-ink-foreground hover:underline hover:decoration-accent"
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="flex flex-col gap-4 lg:col-span-2">
           <h2 className="eyebrow text-accent">Contacto</h2>

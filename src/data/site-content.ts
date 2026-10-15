@@ -8,12 +8,26 @@ export const siteNav = [
   { id: "contacto", label: "Contáctanos", to: "/contacto" },
 ];
 
-export const innovationNav = [
-  { label: "ECOHYBRIDPAVLE®", to: "/innovaciones/ecohybridpavle" },
-  { label: "Litificación para estructuras", to: "/innovaciones/litificacion" },
+export interface InnovationNavItem {
+  label: string;
+  to: string;
+  children?: { label: string; to: string }[];
+}
+
+export const innovationNav: InnovationNavItem[] = [
   {
-    label: "Ladrillos sostenibles para construcción",
-    to: "/innovaciones/ladrillos-sostenibles",
+    label: "ECOHYBRIDPAVLE®",
+    to: "/innovaciones/ecohybridpavle",
+    children: [
+      {
+        label: "Litificación para estructuras",
+        to: "/innovaciones/litificacion",
+      },
+      {
+        label: "Ladrillos sostenibles",
+        to: "/innovaciones/ladrillos-sostenibles",
+      },
+    ],
   },
   { label: "BIOMORF", to: "/innovaciones/biomorf" },
 ];
