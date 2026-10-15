@@ -17,6 +17,9 @@ export interface Innovation {
   bullets: string[];
   image: string;
   imageAlt: string;
+  /** Imagen alternativa para la página de detalle (por ejemplo, con etiquetas). */
+  detailImage?: string;
+  detailImageAlt?: string;
   /** Sub-líneas que cuelgan de esta línea de I+D. */
   subLines?: { name: string; slug: string }[];
   /** Línea principal a la que pertenece una sub-línea. */
@@ -54,6 +57,9 @@ export const innovations: Innovation[] = [
       "/img/ecohybridpavle-camino.webp",
     imageAlt:
       "Sección de la estructura de pavimento: slurry seal, CP3 semirrígida, CP2 apoyo y CP1 soporte",
+    detailImage: "/img/ecohybridpavle-capas.webp",
+    detailImageAlt:
+      "Esquema de las capas de la geoestructura: slurry seal, CP3 semirrígida, CP2 apoyo y CP1 soporte",
     subLines: [
       { name: "Litificación para estructuras", slug: "litificacion" },
       {

@@ -51,14 +51,24 @@ const InnovacionDetalle = () => {
         <div className="shell relative py-16 md:py-24 lg:py-28">
           <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-6">
-              <figure className="overflow-hidden rounded-xl border border-border shadow-lg">
-                <img
-                  src={innovation.image}
-                  alt={innovation.imageAlt}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[520px]"
-                />
+              <figure className="overflow-hidden rounded-xl border border-border bg-secondary shadow-lg">
+                {innovation.detailImage ? (
+                  <img
+                    src={innovation.detailImage}
+                    alt={innovation.detailImageAlt ?? innovation.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full object-contain"
+                  />
+                ) : (
+                  <img
+                    src={innovation.image}
+                    alt={innovation.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-[300px] w-full object-cover sm:h-[420px] lg:h-[520px]"
+                  />
+                )}
               </figure>
             </Reveal>
 
