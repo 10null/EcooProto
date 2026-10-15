@@ -236,21 +236,50 @@ export const innovations: Innovation[] = [
   {
     slug: "biomorf",
     name: "BIOMORF",
-    eyebrow: "Bioingeniería",
-    title: "Estabilidad con vegetación integrada",
+    eyebrow: "Tecnología de conversión físico–química",
+    title: "De residuo contaminado a material granular inerte",
     summary:
-      "Mecanismos y sistemas que permiten estabilidad en taludes, laderas y bordes de vía, integrando vegetación y materiales del territorio.",
+      "Transformamos residuos contaminados con hidrocarburos y solventes en un material granular inerte, estable y seguro, aprovechable dentro de esquemas de economía circular.",
     description:
-      "BIOMORF reúne nuestros mecanismos y sistemas que permiten estabilidad en taludes, laderas y bordes de vía, integrando vegetación y materiales del territorio. La estructura resuelve la estabilidad y, al mismo tiempo, regenera el ecosistema intervenido.",
+      "BIOMORF es una tecnología innovadora diseñada para transformar residuos contaminados con hidrocarburos y solventes en un material granular inerte, estable y seguro. Su fundamento se basa en un proceso físico–químico de dos etapas que elimina la peligrosidad del residuo y lo convierte en un recurso aprovechable dentro de esquemas de economía circular. Este sistema responde a la necesidad de reducir pasivos ambientales, minimizar riesgos legales y generar valor económico, social y ambiental.",
     bullets: [
-      "Muros de contención con vegetación integrada",
-      "Estabilidad de taludes, laderas y bordes de vía",
-      "Control de erosión con materiales del territorio",
-      "Regeneración del ecosistema intervenido",
+      "Elimina la peligrosidad del residuo contaminado",
+      "Neutraliza hidrocarburos y compuestos fenólicos",
+      "Producto final inerte, libre de hidrocarburos y humedad",
+      "Disposición final controlada o aprovechamiento como insumo",
     ],
-    image:
-      "/img/innovacion-biomorf.webp",
+    image: "/img/innovacion-biomorf-2.webp",
     imageAlt:
-      "Muro de contención con vegetación integrada estabilizando un talud junto a la vía",
+      "Material granular inerte obtenido del tratamiento de residuos con BIOMORF",
+    spec: {
+      label: "Cómo funciona",
+      title: "Proceso físico–químico de dos etapas",
+      reference:
+        "BIOMORF · ECOP AV LE S.A.S. · No extraemos recursos, regeneramos territorios",
+      blocks: [
+        {
+          code: "FASE 1",
+          title: "Ruptura oleo–molecular controlada",
+          paragraphs: [
+            "La primera fase consiste en aplicar un agente químico formulado para desactivar y fragmentar los enlaces físico–químicos de la fase oleosa. Este procedimiento neutraliza hidrocarburos, elimina compuestos fenólicos y suprime completamente la capacidad de migración o lixiviación.",
+          ],
+        },
+        {
+          code: "FASE 2",
+          title: "Secado reactivo y estabilización granular",
+          paragraphs: [
+            "En la segunda fase se incorpora un compuesto sólido de acción química que libera el agua retenida en la matriz del residuo. Este paso genera una reconfiguración estructural de las partículas, dando como resultado un material granular seco, inerte y estable frente a condiciones ambientales externas.",
+          ],
+        },
+        {
+          code: "RESULTADO",
+          title: "Material granular inerte y aprovechable",
+          paragraphs: [
+            "El producto final de BIOMORF es un material granular inerte, libre de hidrocarburos y humedad, con estabilidad físico–química comprobada. Su potencial de contaminación es nulo y cumple con las condiciones para disposición final controlada o para su integración en esquemas de aprovechamiento dentro de la economía circular.",
+            "El proceso tiene una duración máxima de semanas y asegura la eliminación de contaminantes libres y de la humedad retenida, obteniendo un producto estable, sólido y ambientalmente seguro.",
+          ],
+        },
+      ],
+    },
   },
 ];

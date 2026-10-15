@@ -124,7 +124,7 @@ export const pageMeta = {
   innovaciones: {
     title: "Innovaciones | ECOHYBRIDPAVLE® + S-SEIM y BIOMORF",
     description:
-      "Dos líneas de I+D propias: el sistema ECOHYBRIDPAVLE® + S-SEIM para geoestructuras de pavimento ejecutadas in situ, y BIOMORF para estabilidad de taludes con vegetación integrada.",
+      "Dos líneas de I+D propias: el sistema ECOHYBRIDPAVLE® + S-SEIM para geoestructuras de pavimento ejecutadas in situ, y BIOMORF para convertir residuos contaminados en material granular inerte.",
   },
   servicios: {
     title: "Servicios de ingeniería | ECOP AVLE S.A.S.",

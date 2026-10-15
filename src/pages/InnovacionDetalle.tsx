@@ -105,7 +105,7 @@ const InnovacionDetalle = () => {
       <CtaBand
         eyebrow="Aplicación en obra"
         title="Evaluemos tu caso con esta tecnología"
-        description="Revisamos el material disponible, las condiciones del corredor y te indicamos cómo aplica el sistema, con qué respaldo técnico y bajo qué controles de calidad."
+        description="Revisamos tu caso, el material disponible y las condiciones del proyecto, y te indicamos cómo aplica esta tecnología, con qué respaldo técnico y bajo qué controles de calidad."
         primaryLabel="Agendar visita técnica"
       />
     </>
