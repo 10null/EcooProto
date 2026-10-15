@@ -2,6 +2,7 @@ import { AboutSection } from "@/components/site/about-section";
 import { AboutHighlights } from "@/components/site/about-highlights";
 import { CtaBand } from "@/components/site/cta-band";
 import { CredentialsBand } from "@/components/site/credentials-band";
+import { MissionVision } from "@/components/site/mission-vision";
 import { PageHero } from "@/components/site/page-hero";
 import { pageHeros, pageMeta } from "@/data/site-content";
 import { usePageMeta } from "@/hooks/use-page-meta";
@@ -14,6 +15,7 @@ const QuienesSomos = () => {
       <PageHero {...pageHeros.quienesSomos} />
       <AboutSection showMoreLink={false} />
       <AboutHighlights />
+      <MissionVision />
       <CredentialsBand />
       <CtaBand
         title="Trabajemos juntos en tu próximo proyecto"

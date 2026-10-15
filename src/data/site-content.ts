@@ -171,6 +171,19 @@ export const pageMeta = {
 /* Quiénes somos                                                             */
 /* ------------------------------------------------------------------------- */
 
+export const missionVision = [
+  {
+    icon: "target",
+    label: "Nuestra misión",
+    text: "En nuestra empresa no extraemos recursos, regeneramos territorios. A través de innovación, tecnología y excelencia en procesos, ofrecemos soluciones que optimizan la infraestructura y generan valor sostenible, garantizando calidad, productividad y competitividad para nuestros clientes.",
+  },
+  {
+    icon: "eye",
+    label: "Nuestra visión",
+    text: "Ser la empresa colombiana de ingeniería referente en América Latina por transformar los pasivos ambientales en infraestructura sostenible. Queremos llevar nuestras tecnologías propias —ECOHYBRIDPAVLE® y BIOMORF— a cada territorio, demostrando que es posible construir sin extraer recursos, regenerando el ambiente y generando valor social y económico para las regiones.",
+  },
+] as const;
+
 export const aboutBlocks = [
   {
     icon: "leaf",
