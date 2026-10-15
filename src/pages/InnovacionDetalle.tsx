@@ -20,7 +20,7 @@ const InnovacionDetalle = () => {
 
   usePageMeta(
     innovation
-      ? `${innovation.name} | Innovaciones | ECOP AV LE S.A.S.`
+      ? `${innovation.name} | Innovaciones | ECOPAVLE S.A.S.`
       : pageMeta.innovaciones.title,
     innovation?.summary ?? pageMeta.innovaciones.description
   );

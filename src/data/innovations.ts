@@ -35,7 +35,7 @@ export interface Innovation {
 /**
  * Líneas de I+D propias.
  * La especificación técnica de ECOHYBRIDPAVLE® reproduce el documento
- * "ESPECIFICACIÓN TÉCNICA ECOHYBRIDPAVLE® + S-SEIM" de ECOP AV LE S.A.S.
+ * "ESPECIFICACIÓN TÉCNICA ECOHYBRIDPAVLE® + S-SEIM" de ECOPAVLE S.A.S.
  */
 export const innovations: Innovation[] = [
   {
@@ -96,7 +96,7 @@ export const innovations: Innovation[] = [
             },
             {
               label: "Sello protector no estructural",
-              text: "Capa superficial delgada, de carácter no estructural, cuya función es proporcionar textura, hermeticidad superficial, protección frente a agentes climáticos y seguridad de uso mediante condiciones adecuadas de deslizamiento. Corresponde preferentemente a productos desarrollados y suministrados por ECOP AV LE S.A.S., diseñados para no aportar capacidad resistente adicional; cualquier alternativa diferente debe ser expresamente aprobada por el proyectista y por ECOP AV LE S.A.S.",
+              text: "Capa superficial delgada, de carácter no estructural, cuya función es proporcionar textura, hermeticidad superficial, protección frente a agentes climáticos y seguridad de uso mediante condiciones adecuadas de deslizamiento. Corresponde preferentemente a productos desarrollados y suministrados por ECOPAVLE S.A.S., diseñados para no aportar capacidad resistente adicional; cualquier alternativa diferente debe ser expresamente aprobada por el proyectista y por ECOPAVLE S.A.S.",
             },
           ],
         },
@@ -144,7 +144,7 @@ export const innovations: Innovation[] = [
             },
             {
               label: "EH.4.4 Espesor de la geoestructura",
-              text: "El espesor de diseño es definido por ECOP AV LE S.A.S. en los documentos del proyecto, en función del nivel de servicio, el tipo de vía y las condiciones del material del territorio. El espesor medio construido no puede ser inferior al de diseño y los espesores individuales deben cumplir las tolerancias establecidas para capas estructurales.",
+              text: "El espesor de diseño es definido por ECOPAVLE S.A.S. en los documentos del proyecto, en función del nivel de servicio, el tipo de vía y las condiciones del material del territorio. El espesor medio construido no puede ser inferior al de diseño y los espesores individuales deben cumplir las tolerancias establecidas para capas estructurales.",
             },
           ],
         },
@@ -272,7 +272,7 @@ export const innovations: Innovation[] = [
       label: "Cómo funciona",
       title: "Proceso físico–químico de dos etapas",
       reference:
-        "BIOMORF · ECOP AV LE S.A.S. · No extraemos recursos, regeneramos territorios",
+        "BIOMORF · ECOPAVLE S.A.S. · No extraemos recursos, regeneramos territorios",
       blocks: [
         {
           code: "FASE 1",
@@ -313,7 +313,7 @@ export const innovations: Innovation[] = [
 /**
  * Sub-líneas de ECOHYBRIDPAVLE®.
  * Reproducen el contenido de las páginas "Litificación para estructuras" y
- * "Ladrillos sostenibles para construcción" de ECOP AV LE S.A.S.
+ * "Ladrillos sostenibles para construcción" de ECOPAVLE S.A.S.
  */
 export const innovationSubLines: Innovation[] = [
   {
@@ -338,7 +338,7 @@ export const innovationSubLines: Innovation[] = [
     spec: {
       label: "La nueva generación de estructuras portantes",
       title: "Litificación in situ para estructuras",
-      reference: "ECOHYBRIDPAVLE® · ECOP AV LE S.A.S.",
+      reference: "ECOHYBRIDPAVLE® · ECOPAVLE S.A.S.",
       blocks: [
         {
           code: "01",
@@ -445,7 +445,7 @@ export const innovationSubLines: Innovation[] = [
     spec: {
       label: "Cómo funciona",
       title: "Materiales, proceso, beneficios y mercado",
-      reference: "ECOHYBRIDPAVLE® · ECOP AV LE S.A.S.",
+      reference: "ECOHYBRIDPAVLE® · ECOPAVLE S.A.S.",
       blocks: [
         {
           code: "01",
