@@ -17,6 +17,10 @@ export interface Innovation {
   bullets: string[];
   image: string;
   imageAlt: string;
+  /** Sub-líneas que cuelgan de esta línea de I+D. */
+  subLines?: { name: string; slug: string }[];
+  /** Línea principal a la que pertenece una sub-línea. */
+  parent?: { name: string; slug: string };
   spec?: {
     label: string;
     title: string;
@@ -50,6 +54,13 @@ export const innovations: Innovation[] = [
       "/img/innovacion-ecohybrid.webp",
     imageAlt:
       "Superficie de geoestructura de pavimento con muestra de núcleo y equipo de medida",
+    subLines: [
+      { name: "Litificación para estructuras", slug: "litificacion" },
+      {
+        name: "Ladrillos sostenibles para construcción",
+        slug: "ladrillos-sostenibles",
+      },
+    ],
     spec: {
       label: "Especificación técnica",
       title: "ECOHYBRIDPAVLE® + S-SEIM",
@@ -289,6 +300,218 @@ export const innovations: Innovation[] = [
           image: "/img/biomorf-resultado.webp",
           imageAlt:
             "Muestra del material granular inerte obtenido al final del proceso",
+        },
+      ],
+    },
+  },
+];
+
+/**
+ * Sub-líneas de ECOHYBRIDPAVLE®.
+ * Reproducen el contenido de las páginas "Litificación para estructuras" y
+ * "Ladrillos sostenibles para construcción" de ECOP AV LE S.A.S.
+ */
+export const innovationSubLines: Innovation[] = [
+  {
+    slug: "litificacion",
+    name: "Litificación para estructuras",
+    eyebrow: "ECOHYBRIDPAVLE® · Sub-línea",
+    title: "Litificación in situ para estructuras portantes",
+    summary:
+      "Transformamos suelos in situ y RCD mediante aleación molecular acelerada con micro y macrofibras, creando geoestructuras semirrígidas, microflexibles y dúctiles.",
+    description:
+      "Somos un sistema y un producto: transformamos suelos in situ y RCD mediante aleación molecular acelerada con micro y macro fibras, creando geoestructuras semirrígidas, microflexibles y dúctiles. Entregamos pavimentos, plataformas, losetas, bloques y adoquines que resisten cargas repetidas con deformación controlada, con sustentabilidad ambiental.",
+    bullets: [
+      "Pavimentos, plataformas, losetas, bloques y adoquines",
+      "Resistencia a cargas repetidas con deformación controlada",
+      "Geoestructuras semirrígidas, microflexibles y dúctiles",
+      "Sustentabilidad ambiental en todo el proceso",
+    ],
+    image: "/img/lit-hero.webp",
+    imageAlt:
+      "Estructura portante construida con litificación in situ ECOHYBRIDPAVLE®",
+    parent: { name: "ECOHYBRIDPAVLE®", slug: "ecohybridpavle" },
+    spec: {
+      label: "La nueva generación de estructuras portantes",
+      title: "Litificación in situ para estructuras",
+      reference: "ECOHYBRIDPAVLE® · ECOP AV LE S.A.S.",
+      blocks: [
+        {
+          code: "01",
+          title: "Método tradicional",
+          paragraphs: [
+            "El método convencional reemplaza el suelo existente con materiales de cantera transportados desde otras regiones, lo que aumenta los costos, el tráfico pesado y la huella ambiental de la obra.",
+          ],
+          image: "/img/lit-metodo-tradicional.webp",
+          imageAlt: "Estructura construida con el método tradicional",
+        },
+        {
+          code: "02",
+          title: "Método S-SEIM ECOHYBRIDPAVLE®",
+          paragraphs: [
+            "El método S-SEIM aprovecha el suelo del propio terreno y los residuos de construcción y demolición, integrándolos mediante reacción fisicoquímica hasta conformar una geoestructura continua y durable.",
+          ],
+          image: "/img/lit-metodo-sseim.webp",
+          imageAlt:
+            "Estructura conformada con el método S-SEIM de ECOHYBRIDPAVLE®",
+        },
+        {
+          code: "03",
+          title: "¿Cómo funciona?",
+          paragraphs: [
+            "El sistema combina tres compuestos especializados: densificante, adhesivo y activador. Estos inducen una reacción físico–química controlada, la cual transforma el suelo tratado en una masa sólida, densa, impermeable y durable.",
+          ],
+          image: "/img/lit-reaccion.webp",
+          imageAlt: "Reacción físico–química del suelo tratado",
+        },
+        {
+          code: "04",
+          title: "Encapsulamiento y protección estructural",
+          paragraphs: [
+            "El proceso genera una barrera de encapsulamiento integral que bloquea el paso de humedad en ambos sentidos, protegiendo la estructura contra:",
+          ],
+          items: [
+            {
+              label: "Infiltraciones",
+              text: "Bloqueo del paso de agua en ambos sentidos.",
+            },
+            {
+              label: "Secado prematuro",
+              text: "Conservación de la humedad necesaria para el curado.",
+            },
+            {
+              label: "Fisuramiento",
+              text: "Control de la retracción y de la fisuración superficial.",
+            },
+            {
+              label: "Erosión",
+              text: "Protección de la superficie frente al desgaste.",
+            },
+          ],
+          image: "/img/lit-encapsulamiento.webp",
+          imageAlt: "Encapsulamiento y protección estructural de la geoestructura",
+        },
+        {
+          code: "05",
+          title: "Aplicaciones estructurales de alta exigencia",
+          paragraphs: [
+            "La geoestructura resultante presenta propiedades mecánicas avanzadas: alta resistencia a compresión y tracción, baja compresibilidad, alta cohesión interna y durabilidad.",
+          ],
+          image: "/img/lit-estructuras.webp",
+          imageAlt: "Aplicación estructural de alta exigencia en obra",
+        },
+        {
+          code: "06",
+          title: "Usos",
+          items: [
+            {
+              label: "Infraestructura vial",
+              text: "Vías urbanas y rurales.",
+            },
+            { label: "Fundaciones de carga", text: "" },
+            { label: "Plataformas industriales", text: "" },
+            { label: "Terraplenes y muros de contención", text: "" },
+            {
+              label: "Tratamiento de pasivos y residuos ambientales",
+              text: "",
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    slug: "ladrillos-sostenibles",
+    name: "Ladrillos sostenibles para construcción",
+    eyebrow: "ECOHYBRIDPAVLE® · Sub-línea",
+    title: "Ladrillos fabricados con el suelo del territorio",
+    summary:
+      "Un sistema que permite fabricar ladrillos con suelos locales y residuos, para vivienda rural y proyectos VIS/VIP.",
+    description:
+      "La construcción de viviendas en zonas rurales enfrenta grandes retos debido al déficit habitacional y la dificultad de acceso a materiales de construcción adecuados. Este sistema, desarrollado bajo la marca registrada ECOHYBRIDPAVLE®, genera un material con alta cohesión, baja compresibilidad, excelente ductilidad y resistencia a la compresión y tracción, además de control de humedad por capilaridad y elevada durabilidad. Todo esto lo convierte en una solución económicamente viable y ambientalmente responsable.",
+    bullets: [
+      "Autonomía rural: el campesino fabrica sus propios ladrillos",
+      "Reducción de costos y del transporte de materiales",
+      "Economía circular: aprovecha residuos y recursos locales",
+      "Ladrillos térmicos y acústicos",
+    ],
+    image: "/img/lad-hero.webp",
+    imageAlt: "Ladrillos fabricados con la tecnología ECOHYBRIDPAVLE®",
+    parent: { name: "ECOHYBRIDPAVLE®", slug: "ecohybridpavle" },
+    spec: {
+      label: "Cómo funciona",
+      title: "Materiales, proceso, beneficios y mercado",
+      reference: "ECOHYBRIDPAVLE® · ECOP AV LE S.A.S.",
+      blocks: [
+        {
+          code: "01",
+          title: "Materiales y proceso de fabricación",
+          paragraphs: [
+            "La fabricación de ladrillos con la tecnología ECOHYBRIDPAVLE® se realiza utilizando suelos locales de cualquier tipo, así como diversos residuos: materiales contaminados de explotación minera, excedentes de la industria petrolera, basuras orgánicas e inorgánicas y residuos de construcción, a los cuales se incorporan los aditivos especiales de ECOHYBRIDPAVLE®: densificante, adhesivo y activador.",
+            "El proceso inicia con la biorremediación del material si se hace necesario, asegurando su transformación a una condición inerte cuando presenta contaminantes no amigables con el medio ambiente. Posteriormente, el material homogenizado se mezcla con la tecnología ECOHYBRIDPAVLE®, se prensa mecánica o manualmente para dar forma a los ladrillos y, finalmente, se acopian listos para su uso. Todo el proceso se complementa con pruebas de laboratorio, como ensayos de flexión y resistencia, para garantizar la calidad y seguridad del producto final.",
+          ],
+          image: "/img/lad-fabricacion.webp",
+          imageAlt: "Proceso de fabricación de ladrillos en sitio",
+        },
+        {
+          code: "02",
+          title: "Beneficios",
+          items: [
+            {
+              label: "Autonomía rural",
+              text: "Los campesinos pueden fabricar sus propios ladrillos con el suelo disponible.",
+            },
+            {
+              label: "Reducción de costos y transporte",
+              text: "Menos materiales traídos de otras regiones.",
+            },
+            {
+              label: "Inclusión social",
+              text: "Facilita el acceso a vivienda digna en zonas apartadas.",
+            },
+            {
+              label: "Economía circular",
+              text: "Aprovecha residuos y recursos locales.",
+            },
+            {
+              label: "Desempeño mecánico",
+              text: "Resistencia a la compresión, flexión y desgaste.",
+            },
+            {
+              label: "Impermeabilidad y cohesión mejoradas",
+              text: "",
+            },
+            {
+              label: "Ladrillos térmicos y acústicos",
+              text: "",
+            },
+          ],
+          image: "/img/lad-producto.webp",
+          imageAlt: "Ladrillo fabricado con ECOHYBRIDPAVLE®",
+        },
+        {
+          code: "03",
+          title: "Aplicaciones",
+          items: [
+            {
+              label: "Muros interiores y exteriores",
+              text: "Ladrillo estructural, ladrillo tolete y muro tapia pisada.",
+            },
+            {
+              label: "Viviendas sociales y proyectos VIS/VIP",
+              text: "",
+            },
+            { label: "Edificaciones sostenibles", text: "" },
+          ],
+        },
+        {
+          code: "04",
+          title: "Mercado",
+          items: [
+            { label: "Proyectos del Ministerio de Vivienda", text: "" },
+            { label: "Constructoras y desarrolladores urbanos", text: "" },
+            { label: "Comunidades rurales y urbanas", text: "" },
+          ],
         },
       ],
     },

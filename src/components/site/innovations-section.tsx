@@ -60,8 +60,21 @@ export const InnovationsSection = ({
                   ))}
                 </ul>
 
-                <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-2">
-                  <Link
+                {item.subLines && (
+                  <div className="flex flex-wrap gap-2">
+                    {item.subLines.map((sub) => (
+                      <Link
+                        key={sub.slug}
+                        to={`/innovaciones/${sub.slug}`}
+                        className="rounded-full border border-ink-strong px-3.5 py-1.5 text-[0.8125rem] text-ink-muted transition-colors duration-150 hover:border-primary-bright/60 hover:text-primary-bright"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-3 pt-2">                  <Link
                     to={`/innovaciones/${item.slug}`}
                     className="inline-flex items-center gap-2 text-[0.9375rem] font-semibold text-primary-bright transition-colors hover:text-accent"
                   >

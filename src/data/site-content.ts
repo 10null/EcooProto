@@ -10,6 +10,11 @@ export const siteNav = [
 
 export const innovationNav = [
   { label: "ECOHYBRIDPAVLE®", to: "/innovaciones/ecohybridpavle" },
+  { label: "Litificación para estructuras", to: "/innovaciones/litificacion" },
+  {
+    label: "Ladrillos sostenibles para construcción",
+    to: "/innovaciones/ladrillos-sostenibles",
+  },
   { label: "BIOMORF", to: "/innovaciones/biomorf" },
 ];
 

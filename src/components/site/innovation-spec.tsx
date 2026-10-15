@@ -75,9 +75,11 @@ export const InnovationSpec = ({ spec }: InnovationSpecProps) => {
                               <span className="text-[0.9375rem] font-semibold text-ink-foreground">
                                 {item.label}
                               </span>
-                              <span className="max-w-[80ch] text-[0.9375rem] leading-relaxed text-ink-muted">
-                                {item.text}
-                              </span>
+                              {item.text && (
+                                <span className="max-w-[80ch] text-[0.9375rem] leading-relaxed text-ink-muted">
+                                  {item.text}
+                                </span>
+                              )}
                             </li>
                           ))}
                         </ul>

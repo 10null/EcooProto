@@ -7,14 +7,16 @@ import { InnovationRelated } from "@/components/site/innovation-related";
 import { InnovationSpec } from "@/components/site/innovation-spec";
 import { PageHero } from "@/components/site/page-hero";
 import { Reveal } from "@/components/site/reveal";
-import { innovations } from "@/data/innovations";
+import { innovations, innovationSubLines } from "@/data/innovations";
 import { pageMeta } from "@/data/site-content";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import NotFound from "@/pages/NotFound";
 
 const InnovacionDetalle = () => {
   const { slug } = useParams<{ slug: string }>();
-  const innovation = innovations.find((item) => item.slug === slug);
+  const innovation = [...innovations, ...innovationSubLines].find(
+    (item) => item.slug === slug
+  );
 
   usePageMeta(
     innovation
@@ -33,6 +35,14 @@ const InnovacionDetalle = () => {
         description={innovation.summary}
         breadcrumb={[
           { label: "Innovaciones", to: "/innovaciones" },
+          ...(innovation.parent
+            ? [
+                {
+                  label: innovation.parent.name,
+                  to: `/innovaciones/${innovation.parent.slug}`,
+                },
+              ]
+            : []),
           { label: innovation.name },
         ]}
       />
