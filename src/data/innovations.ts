@@ -51,9 +51,9 @@ export const innovations: Innovation[] = [
       "Menor explotación de canteras y menor traslado de materiales",
     ],
     image:
-      "/img/innovacion-ecohybrid.webp",
+      "/img/ecohybridpavle-camino.webp",
     imageAlt:
-      "Superficie de geoestructura de pavimento con muestra de núcleo y equipo de medida",
+      "Sección de la estructura de pavimento: slurry seal, CP3 semirrígida, CP2 apoyo y CP1 soporte",
     subLines: [
       { name: "Litificación para estructuras", slug: "litificacion" },
       {
