@@ -75,8 +75,7 @@ export const innovations: Innovation[] = [
           code: "EH.1",
           title: "Descripción",
           paragraphs: [
-            "El sistema comprende el diseño, la ejecución y el control de calidad de geoestructuras conformadas in situ: diagnóstico y dosificación del material del territorio, mezclado con ECOHYBRIDPAVLE®, conformación y compactación por capas según el método S-SEIM, curado y aplicación del sello superficial no estructural.",
-            "La geoestructura resultante es microflexible y de comportamiento semirrígido no frágil: admite cargas repetidas con deformación controlada y puede operar como estructura portante y superficie de rodadura en una misma capa.",
+            "ECOHYBRIDPAVLE® + S-SEIM es un sistema de geoestructuras de pavimento que se ejecutan in situ con suelo del territorio, RCD y/o pasivos previamente acondicionados. La geoestructura cumple simultáneamente la función de estructura de pavimento y de capa de rodadura, protegida por un sello superficial no estructural que aporta textura, hermeticidad y seguridad de uso.",
           ],
         },
         {
