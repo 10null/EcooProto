@@ -30,6 +30,9 @@ export const ProjectsGallery = ({
   );
   const [slideIndex, setSlideIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [videoProject, setVideoProject] = useState<PortfolioProject | null>(
+    null
+  );
   const thumbsRef = useRef<HTMLDivElement | null>(null);
   const touchStartX = useRef<number | null>(null);
 
@@ -147,7 +150,11 @@ export const ProjectsGallery = ({
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((project, index) => (
           <Reveal key={project.title} delay={index * 0.05} className="h-full">
-            <ProjectTile project={project} onOpen={openGallery} />
+            <ProjectTile
+              project={project}
+              onOpen={openGallery}
+              onPlay={setVideoProject}
+            />
           </Reveal>
         ))}
       </div>
@@ -276,6 +283,75 @@ export const ProjectsGallery = ({
                 </div>
               </>
             )}
+          </DialogPrimitive.Content>
+        </DialogPrimitive.Portal>
+      </DialogPrimitive.Root>
+
+      {/* Reproductor del video del proyecto, sin salir de la página */}
+      <DialogPrimitive.Root
+        open={videoProject !== null}
+        onOpenChange={(open) => {
+          if (!open) setVideoProject(null);
+        }}
+      >
+        <DialogPrimitive.Portal>
+          <DialogPrimitive.Overlay className="fixed inset-0 z-[70] bg-ink-900/90 backdrop-blur-sm data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+
+          <DialogPrimitive.Content className="fixed left-1/2 top-1/2 z-[70] flex h-[86vh] w-[min(1100px,94vw)] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-xl border border-ink-border bg-ink-900 text-ink-foreground shadow-lg focus:outline-none data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0">
+            <div className="flex items-start justify-between gap-4 border-b border-ink-border px-5 py-4 md:px-6">
+              <div className="min-w-0">
+                <span className="eyebrow text-accent">
+                  {videoProject?.category}
+                </span>
+                <DialogPrimitive.Title className="mt-1.5 font-display text-[1rem] font-semibold leading-snug text-ink-foreground md:text-[1.25rem]">
+                  {videoProject?.title}
+                </DialogPrimitive.Title>
+                <DialogPrimitive.Description className="sr-only">
+                  Video del proyecto {videoProject?.title}
+                </DialogPrimitive.Description>
+              </div>
+
+              <DialogPrimitive.Close
+                aria-label="Cerrar video"
+                className="flex size-11 shrink-0 items-center justify-center rounded-sm border border-ink-strong text-ink-foreground transition-colors duration-150 hover:border-primary-bright/60 hover:text-primary-bright focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                <X className="size-5" />
+              </DialogPrimitive.Close>
+            </div>
+
+            <div className="flex-1 bg-black">
+              {videoProject?.videoUrl && (
+                <video
+                  key={videoProject.videoUrl}
+                  src={videoProject.videoUrl}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-contain"
+                >
+                  Tu navegador no puede reproducir este video.
+                </video>
+              )}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-ink-border px-5 py-3 md:px-6">
+              <p className="text-[0.875rem] text-ink-muted">
+                {videoProject?.year
+                  ? `${videoProject.year} · ${videoProject.location}`
+                  : videoProject?.location}
+              </p>
+              <p className="text-[0.8125rem] text-ink-muted">
+                También puedes abrirlo en{" "}
+                <a
+                  href={videoProject?.videoUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="font-semibold text-primary-bright underline underline-offset-4"
+                >
+                  pantalla completa
+                </a>
+              </p>
+            </div>
           </DialogPrimitive.Content>
         </DialogPrimitive.Portal>
       </DialogPrimitive.Root>

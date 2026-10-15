@@ -7,10 +7,15 @@ interface ProjectTileProps {
   project: PortfolioProject;
   /** When provided, the tile opens the project gallery instead of being static. */
   onOpen?: (project: PortfolioProject) => void;
+  /** When provided, video projects play inline instead of leaving the site. */
+  onPlay?: (project: PortfolioProject) => void;
 }
 
+const focusClass =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
 /** Single executed-project tile. */
-export const ProjectTile = ({ project, onOpen }: ProjectTileProps) => {
+export const ProjectTile = ({ project, onOpen, onPlay }: ProjectTileProps) => {
   const cover = project.images[0]?.card ?? null;
   const isVideo = Boolean(project.videoUrl);
   const canOpen = Boolean(onOpen) && project.images.length > 0;
@@ -58,10 +63,10 @@ export const ProjectTile = ({ project, onOpen }: ProjectTileProps) => {
             ? `${project.year} · ${project.location}`
             : project.location}
         </p>
-        {canOpen && (
+        {(canOpen || (isVideo && onPlay)) && (
           <span className="mt-3 inline-flex items-center gap-2 text-[0.875rem] font-semibold text-primary-bright opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
-            <Images className="size-4" />
-            Ver galería
+            {isVideo ? <Play className="size-4" /> : <Images className="size-4" />}
+            {isVideo ? "Ver video aquí" : "Ver galería"}
           </span>
         )}
       </div>
@@ -72,16 +77,26 @@ export const ProjectTile = ({ project, onOpen }: ProjectTileProps) => {
     "group relative flex min-h-[320px] w-full flex-col justify-end overflow-hidden rounded-lg border border-ink-border bg-ink-900 text-left";
 
   if (isVideo) {
+    if (onPlay) {
+      return (
+        <button
+          type="button"
+          onClick={() => onPlay(project)}
+          aria-label={`Reproducir el video del proyecto ${project.title}`}
+          className={cn(baseClass, focusClass)}
+        >
+          {content}
+        </button>
+      );
+    }
+
     return (
       <a
         href={project.videoUrl}
         target="_blank"
         rel="noreferrer noopener"
         aria-label={`Ver video del proyecto ${project.title}`}
-        className={cn(
-          baseClass,
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-        )}
+        className={cn(baseClass, focusClass)}
       >
         {content}
       </a>
@@ -94,10 +109,7 @@ export const ProjectTile = ({ project, onOpen }: ProjectTileProps) => {
         type="button"
         onClick={() => onOpen?.(project)}
         aria-label={`Ver la galería del proyecto ${project.title}`}
-        className={cn(
-          baseClass,
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-        )}
+        className={cn(baseClass, focusClass)}
       >
         {content}
       </button>
