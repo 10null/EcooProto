@@ -27,7 +27,7 @@ export interface Innovation {
   spec?: {
     label: string;
     title: string;
-    reference: string;
+    reference?: string;
     blocks: InnovationSpecBlock[];
   };
 }
@@ -70,8 +70,6 @@ export const innovations: Innovation[] = [
     spec: {
       label: "Especificación técnica",
       title: "ECOHYBRIDPAVLE® + S-SEIM",
-      reference:
-        "Documento: Especificación técnica ECOHYBRIDPAVLE® + S-SEIM · ECOP AV LE S.A.S. (NIT 901.474.791-1)",
       blocks: [
         {
           code: "EH.1",
