@@ -333,9 +333,9 @@ export const innovationSubLines: Innovation[] = [
       "Geoestructuras semirrígidas, microflexibles y dúctiles",
       "Sustentabilidad ambiental en todo el proceso",
     ],
-    image: "/img/lit-hero.webp",
+    image: "/img/lit-camino.webp",
     imageAlt:
-      "Estructura portante construida con litificación in situ ECOHYBRIDPAVLE®",
+      "Pavimentadora extendiendo la capa de rodadura con el método S-SEIM de ECOHYBRIDPAVLE®",
     parent: { name: "ECOHYBRIDPAVLE®", slug: "ecohybridpavle" },
     spec: {
       label: "La nueva generación de estructuras portantes",
