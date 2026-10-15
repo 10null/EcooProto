@@ -29,7 +29,7 @@ export const InnovationsSection = ({
         {innovations.map((item, index) => (
           <Reveal key={item.slug} delay={index * 0.08} className="h-full">
             <article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-ink-border bg-ink-800 shadow-ink-card transition-[transform,border-color] duration-200 ease-out hover:-translate-y-[3px] hover:border-primary-bright/[0.45]">
-              <span className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 bg-gradient-gold transition-transform duration-300 ease-engineered group-hover:scale-x-100" />
+              <span className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 bg-gradient-leaf transition-transform duration-300 ease-engineered group-hover:scale-x-100" />
               <img
                 src={item.image}
                 alt={item.imageAlt}
