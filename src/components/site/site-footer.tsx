@@ -1,4 +1,4 @@
-import { ArrowUp, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { EcopavleLogo } from "@/components/site/ecopavle-logo";
@@ -128,19 +128,9 @@ export const SiteFooter = () => (
           © {new Date().getFullYear()} ECOPAVLE S.A.S. Todos los derechos
           reservados.
         </p>
-        <div className="flex items-center gap-5">
-          <span className="text-[0.8125rem] text-ink-muted">
-            Hecho en Colombia
-          </span>
-          <button
-            type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            aria-label="Volver arriba"
-            className="flex size-11 items-center justify-center rounded-sm border border-ink-strong text-ink-foreground transition-[background-color,transform] duration-150 hover:-translate-y-0.5 hover:bg-ink-foreground/[0.08]"
-          >
-            <ArrowUp className="size-[18px]" />
-          </button>
-        </div>
+        <p className="text-[0.8125rem] text-ink-muted">
+          Powered By DLE Services
+        </p>
       </div>
     </div>
   </footer>
