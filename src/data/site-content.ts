@@ -174,7 +174,7 @@ export const pageMeta = {
 export const missionVision = [
   {
     icon: "target",
-    label: "Nuestra misión",
+    label: "Misión",
     paragraphs: [
       "En ECOPAVLE S.A.S. desarrollamos e implementamos tecnología e ingeniería colombiana para transformar materiales disponibles en el territorio y pasivos ambientales en soluciones de infraestructura eficientes, sostenibles y de alto desempeño.",
       "Integramos innovación, ingeniería, economía circular y conocimiento aplicado para reducir el consumo de recursos naturales, optimizar los procesos constructivos y generar valor ambiental, social y económico.",
@@ -183,7 +183,7 @@ export const missionVision = [
   },
   {
     icon: "eye",
-    label: "Nuestra visión",
+    label: "Visión",
     paragraphs: [
       "En la próxima década, ECOPAVLE S.A.S. se consolidará como una empresa colombiana líder en innovación tecnológica aplicada a la infraestructura sostenible y la economía circular, con presencia y reconocimiento a nivel nacional e internacional.",
       "Seremos referentes en el desarrollo de una nueva generación de infraestructura, caracterizada por el alto desempeño técnico, la sostenibilidad y el aprovechamiento responsable de los recursos, promoviendo soluciones que reduzcan la dependencia de la extracción intensiva de recursos naturales.",
