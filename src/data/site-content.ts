@@ -185,7 +185,9 @@ export const missionVision = [
     icon: "eye",
     label: "Nuestra visión",
     paragraphs: [
-      "Ser la empresa colombiana de ingeniería referente en América Latina por transformar los pasivos ambientales en infraestructura sostenible. Queremos llevar nuestras tecnologías propias —ECOHYBRIDPAVLE® y BIOMORF— a cada territorio, demostrando que es posible construir sin extraer recursos, regenerando el ambiente y generando valor social y económico para las regiones.",
+      "En la próxima década, ECOPAVLE S.A.S. se consolidará como una empresa colombiana líder en innovación tecnológica aplicada a la infraestructura sostenible y la economía circular, con presencia y reconocimiento a nivel nacional e internacional.",
+      "Seremos referentes en el desarrollo de una nueva generación de infraestructura, caracterizada por el alto desempeño técnico, la sostenibilidad y el aprovechamiento responsable de los recursos, promoviendo soluciones que reduzcan la dependencia de la extracción intensiva de recursos naturales.",
+      "Desde Colombia, proyectaremos nuestra tecnología, ingeniería y conocimiento al mundo, impulsando la transformación sostenible de los territorios y contribuyendo al desarrollo de una infraestructura más eficiente, responsable y preparada para los desafíos del futuro.",
     ],
   },
 ] as const;
