@@ -342,7 +342,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: "2024",
     location: "Muzo, Boyacá",
     category: "Geoestructuras de pavimento",
-    images: projectPhotos("esteriles-muzo-boyaca", [3]),
+    images: projectPhotos("esteriles-muzo-boyaca", [1, 2, 3, 4, 5, 6, 7, 8]),
   },
   {
     title: "Plataforma de izaje de equipos, estación 1 – Metro Línea 1",
