@@ -175,12 +175,18 @@ export const missionVision = [
   {
     icon: "target",
     label: "Nuestra misión",
-    text: "En nuestra empresa no extraemos recursos, regeneramos territorios. A través de innovación, tecnología y excelencia en procesos, ofrecemos soluciones que optimizan la infraestructura y generan valor sostenible, garantizando calidad, productividad y competitividad para nuestros clientes.",
+    paragraphs: [
+      "En ECOPAVLE S.A.S. desarrollamos e implementamos tecnología e ingeniería colombiana para transformar materiales disponibles en el territorio y pasivos ambientales en soluciones de infraestructura eficientes, sostenibles y de alto desempeño.",
+      "Integramos innovación, ingeniería, economía circular y conocimiento aplicado para reducir el consumo de recursos naturales, optimizar los procesos constructivos y generar valor ambiental, social y económico.",
+      "Nuestro propósito es transformar la manera de construir infraestructura, aprovechando responsablemente los recursos disponibles y llevando soluciones tecnológicas a los territorios donde más se necesitan.",
+    ],
   },
   {
     icon: "eye",
     label: "Nuestra visión",
-    text: "Ser la empresa colombiana de ingeniería referente en América Latina por transformar los pasivos ambientales en infraestructura sostenible. Queremos llevar nuestras tecnologías propias —ECOHYBRIDPAVLE® y BIOMORF— a cada territorio, demostrando que es posible construir sin extraer recursos, regenerando el ambiente y generando valor social y económico para las regiones.",
+    paragraphs: [
+      "Ser la empresa colombiana de ingeniería referente en América Latina por transformar los pasivos ambientales en infraestructura sostenible. Queremos llevar nuestras tecnologías propias —ECOHYBRIDPAVLE® y BIOMORF— a cada territorio, demostrando que es posible construir sin extraer recursos, regenerando el ambiente y generando valor social y económico para las regiones.",
+    ],
   },
 ] as const;
 

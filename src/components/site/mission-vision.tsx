@@ -36,9 +36,16 @@ export const MissionVision = () => (
                   {item.label}
                 </h3>
 
-                <p className="max-w-[62ch] text-[1rem] leading-relaxed text-muted-foreground">
-                  {item.text}
-                </p>
+                <div className="flex flex-col gap-4">
+                  {item.paragraphs.map((paragraph) => (
+                    <p
+                      key={paragraph.slice(0, 40)}
+                      className="max-w-[62ch] text-[1rem] leading-relaxed text-muted-foreground"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </article>
             </Reveal>
           );
